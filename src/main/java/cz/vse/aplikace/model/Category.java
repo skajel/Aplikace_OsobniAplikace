@@ -1,4 +1,5 @@
 package cz.vse.aplikace.model;
 
-public enum Category {
+enum Category {
+    RENT, ENTERTAINMENT, BUSINESS, ENERGIES, SPORT, GROCERIES, WAGE, CHILDREN
 }
