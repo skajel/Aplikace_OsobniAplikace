@@ -17,16 +17,19 @@ public class Wallet {
     }
 
 
-    public void addWallet(Wallet wallet){
+    public void addWallet(Wallet wallet) {
 
     }
-    public void showWallet(){
+
+    public void showWallet() {
 
     }
-    public void changeWallet(){
+
+    public void changeWallet() { //přejmenoval bych na editWallet() ...šesták
 
     }
-    public void deleteWallet(){
+
+    public void deleteWallet() { //přejmenoval bych na removeWallet() ...šesták
 
     }
 
@@ -39,7 +42,7 @@ public class Wallet {
         return accountBalance;
     }
 
-    public String getWalletDesription(){
+    public String getWalletDesription() {
         return walletDesription;
     }
 }
