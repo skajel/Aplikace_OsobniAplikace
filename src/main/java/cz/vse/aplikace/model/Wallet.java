@@ -7,12 +7,12 @@ public class Wallet {
 
     private final Map<String, Wallet> walletName;
     public double accountBalance;
-    public String walletDesription;
+    public String walletDescription;
 
 
-    public Wallet(String walletDesription, double accountBalance) {
+    public Wallet(String walletDescription, double accountBalance) {
         this.accountBalance = accountBalance;
-        this.walletDesription = walletDesription;
+        this.walletDescription = walletDescription;
         walletName = new HashMap<>();
     }
 
@@ -41,7 +41,7 @@ public class Wallet {
         return accountBalance;
     }
 
-    public String getWalletDesription() {
-        return walletDesription;
+    public String getWalletDescription() {
+        return walletDescription;
     }
 }
