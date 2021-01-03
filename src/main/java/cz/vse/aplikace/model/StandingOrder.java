@@ -6,6 +6,7 @@ public class StandingOrder {
     private double amount;
     private Date date;
     private int repetitionPeriod;
+    //i standing order by měl mít category ne ? ...Lukáš Fiala
 
     public StandingOrder(double amount,Date date,int repetitionPeriod){
         this.amount = amount;
