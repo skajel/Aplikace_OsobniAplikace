@@ -6,30 +6,29 @@ import java.util.Map;
 public class Wallet {
 
     private final Map<String, Wallet> walletName;
-    public int accountBalance;
+    public double accountBalance;
     public String walletDesription;
 
 
-    public Wallet(String walletDesription, int accountBalance) {
+    public Wallet(String walletDesription, double accountBalance) {
         this.accountBalance = accountBalance;
         this.walletDesription = walletDesription;
         walletName = new HashMap<>();
     }
 
-
     public void addWallet(Wallet wallet) {
-
+        walletName.put(String.valueOf(wallet.getWalletName()), wallet);
     }
 
     public void showWallet() {
 
     }
 
-    public void changeWallet() { //přejmenoval bych na editWallet() ...šesták
+    public void editWallet() {
 
     }
 
-    public void deleteWallet() { //přejmenoval bych na removeWallet() ...šesták
+    public void removeWallet() {
 
     }
 
@@ -38,7 +37,7 @@ public class Wallet {
         return walletName;
     }
 
-    public int getAccountBalance() {
+    public double getAccountBalance() {
         return accountBalance;
     }
 
