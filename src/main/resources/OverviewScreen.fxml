@@ -1,14 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.LineChart?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cz.vse.aplikace.MainController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.MainController">
 
-</AnchorPane>
+    <left>
+        <VBox>
+            <children>
+                <Button fx:id="account" mnemonicParsing="false" text="Account"></Button>
+                <Button fx:id="add" mnemonicParsing="false" text="Add"></Button>
+                <Button fx:id="transaction" mnemonicParsing="false" text="Transaction"></Button>
+                <Button fx:id="overview" mnemonicParsing="false" text="Overview"></Button>
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png"/>
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                </ImageView>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Current balance"/>
+                                <TextField fx:id="Current_balance" maxHeight="-Infinity" maxWidth="-Infinity"
+                                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                           prefWidth="200.0">
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="5.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </TextField>
+                                <Label text="Total gain"/>
+                                <TextField fx:id="total_gain" maxHeight="-Infinity" maxWidth="-Infinity"
+                                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                           prefWidth="200.0">
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="5.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </TextField>
+                            </children>
+                            <HBox.margin>
+                                <Insets right="10.0"/>
+                            </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Period"/>
+                                <PasswordField fx:id="period" maxHeight="-Infinity" maxWidth="-Infinity"
+                                               minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                               prefWidth="200.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="5.0"/>
+                                    </VBox.margin>
+                                </PasswordField>
+                                <Label text="Total spending"/>
+                                <PasswordField fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity"
+                                               minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                               prefWidth="200.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="5.0"/>
+                                    </VBox.margin>
+                                </PasswordField>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </VBox>
+                        <VBox>
+                            <Button fx:id="update" mnemonicParsing="false" text="Update overview"></Button>
+                        </VBox>
+                    </children>
+                </HBox>
+                <AreaChart layoutX="56.0" layoutY="131.0" prefHeight="200.0" prefWidth="444.0"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </AreaChart>
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>
