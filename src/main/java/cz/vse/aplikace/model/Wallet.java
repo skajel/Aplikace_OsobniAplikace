@@ -8,6 +8,7 @@ public class Wallet {
     private final Map<String, Wallet> walletName;
     public double accountBalance;
     public String walletDescription;
+    private Wallet wallet;
 
 
     public Wallet(String walletDescription, double accountBalance) {
@@ -16,12 +17,13 @@ public class Wallet {
         walletName = new HashMap<>();
     }
 
-    public void addWallet(Wallet wallet) {
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
         walletName.put(String.valueOf(wallet.getWalletName()), wallet);
     }
 
-    public void showWallet() {
-
+    public Wallet getWallet() {
+        return wallet;
     }
 
     public void editWallet() {
@@ -44,4 +46,5 @@ public class Wallet {
     public String getWalletDescription() {
         return walletDescription;
     }
+
 }
