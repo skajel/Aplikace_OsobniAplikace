@@ -1,14 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cz.vse.aplikace.MainController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.MainController">
+    <left>
+        <VBox>
+            <children>
+                <Button fx:id="account" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Account">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="add" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Add">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="transaction" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Transaction">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="overview" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Overview">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </ImageView>
+            </children>
+        </VBox>
+    </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="140.0" prefWidth="500.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="50.0" prefWidth="140.0">
+                                 <children>
+                                    <Label text="Transaction type" textAlignment="CENTER" />
+                                    <ChoiceBox prefHeight="30.0" prefWidth="130.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin></ChoiceBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin></VBox>
+                              <VBox alignment="CENTER" prefHeight="52.0" prefWidth="140.0">
+                                 <children>
+                                    <Label prefHeight="20.0" prefWidth="106.0" text="Transaction amount" />
+                                    <TextField prefHeight="30.0" prefWidth="115.0" />
+                                 </children></VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="170.0">
+                                 <children>
+                                    <Label text="Transaction description" textAlignment="CENTER" />
+                                    <TextField prefHeight="30.0" prefWidth="115.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="30.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+                                 <children>
+                                    <Label text="Transaction date" textAlignment="CENTER" />
+                                    <DatePicker prefHeight="30.0" prefWidth="135.0" />
+                                 </children>
+                              </VBox>
+                           </children></HBox>
+                     </children>
+                  </VBox>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Change&#10;view" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <Line endX="400.0" startX="-100.0" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="500.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="140.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="Transaction type" />
+                        <ChoiceBox prefHeight="30.0" prefWidth="130.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="160.0">
+                     <HBox.margin>
+                        <Insets right="45.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="Transaction between" />
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="130.0">
+                           <children>
+                              <DatePicker prefHeight="50.0" prefWidth="80.0" />
+                              <DatePicker prefHeight="30.0" prefWidth="80.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="Filter" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children></HBox>
+            <HBox prefHeight="190.0" prefWidth="500.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="160.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="Transaction type">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="160.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="Transaction amount">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="160.0">
+                     <children>
+                        <Label text="Transaction description">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children></VBox>
+   </center>
+</BorderPane>
