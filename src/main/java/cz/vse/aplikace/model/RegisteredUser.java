@@ -27,6 +27,10 @@ public class RegisteredUser {
 
     }
 
+    public void addUser(){
+
+    }
+
 
     public String getFirstName() {
         return firstName;
