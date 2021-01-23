@@ -3,12 +3,7 @@ package cz.vse.aplikace.model;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
 
 public class JSON {
@@ -23,8 +18,13 @@ public class JSON {
 
     private static final String TRANSACTIONS = "transactions";
 
-    JSONArray users = new JSONArray();
-    JSONArray transactions = new JSONArray();
+    private JSONArray users;
+    private JSONArray transactions;
+
+    public void init() {
+        users = new JSONArray();
+        transactions = new JSONArray();
+    }
 
     public void addUser(String username, byte[] password, String email){
         JSONObject user = new JSONObject();
@@ -48,7 +48,7 @@ public class JSON {
             JSONArray userList = (JSONArray) obj;
             userList.forEach(currentUser -> {
                    if (compareUser((JSONObject) currentUser, username)){
-                        ((JSONObject) currentUser).put(TRANSACTIONS, transactions);
+                        ((JSONObject) currentUser).put(TRANSACTIONS, transaction);
 
             }});
         } catch (Exception e){
@@ -72,15 +72,8 @@ public class JSON {
         return users;
     }
 
-    public void setUsers(JSONArray users) {
-        this.users = users;
-    }
-
     public JSONArray getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(JSONArray transactions) {
-        this.transactions = transactions;
-    }
 }
