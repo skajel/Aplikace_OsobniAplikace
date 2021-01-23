@@ -10,16 +10,19 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class JSON {
+    private static final String FIRST_NAME = "firstName";
+    
 
     public static void main(String[] args) throws FileNotFoundException {
         JSONArray users = new JSONArray();
+
 
         Map m = new LinkedHashMap<>();
 
         m. put("firstName", "Ondra");
         m. put("lastName", "Štěpán");
         m. put("userName", "ska");
-        m. put("passwrod", "123");
+        m. put("password", "123");
         m. put("email", "ondra@gmail.com");
 
         Map tran = new LinkedHashMap<>();
@@ -39,10 +42,17 @@ public class JSON {
             e.printStackTrace();
         }
 
+
+
         System.out.println(users);
 
 
     }
 
+    public boolean singIn(String username, String password){
+        return
+    }
+
+    public String signUp
 
 }

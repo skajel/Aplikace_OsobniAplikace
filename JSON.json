@@ -1,1 +1,21 @@
-[{"passwrod":"123","firstName":"Ondra","userName":"ska","transactions":{"date":"28.6.2020","description":"přidána transakce","amount":"100"},"email":"ondra@gmail.com"}]
+[
+  {
+    "firstName": "Ondřej",
+    "lastName": "Štěpán",
+    "transactions" :
+          [
+            {
+              "amount": 100,
+            }
+          ],
+    "standingOrders":
+            [
+              {
+
+              }
+            ]
+  }
+  {
+
+  }
+]
