@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class JSON {
     private static final String FIRST_NAME = "firstName";
@@ -15,6 +16,10 @@ public class JSON {
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
     private static final String EMAIL = "email";
+
+    private static final String AMOUNT = "amount";
+    private static final String DATE = "date";
+    private static final String DESCRIPTION = "description";
 
 
 
@@ -48,16 +53,14 @@ public class JSON {
             e.printStackTrace();
         }
 
-
-
         System.out.println(users);
 
 
     }
 
-    public String getRandomID(){
-
-        return id;
+    public UUID getRandomID(){
+        UUID uuid = UUID.randomUUID();
+        return uuid;
     }
 
 }
