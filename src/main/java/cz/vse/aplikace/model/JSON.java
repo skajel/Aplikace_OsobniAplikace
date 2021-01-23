@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.util.Date;
 import java.util.UUID;
 
 public class JSON {
@@ -40,14 +41,7 @@ public class JSON {
         return null;
     }
 
-    public static void addUser(String username, String password, String email) {
-        JSONObject user = new JSONObject();
-        user.put(USERNAME, username);
-        user.put(PASSWORD, password);
-        user.put(EMAIL, email);
-
-        JSONArray userList = loadData();
-        userList.add(user);
+    public static void saveData(JSONArray userList){
         try {
             FileWriter writer = new FileWriter(SAVE_FILE_NAME);
             writer.write(userList.toJSONString());
@@ -55,29 +49,39 @@ public class JSON {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void addUser(String username, String password, String email) {
+        JSONObject user = new JSONObject();
+        user.put(USERNAME, username);
+        user.put(PASSWORD, password);
+        user.put(EMAIL, email);
+        user.put(TRANSACTIONS, "");
+
+        JSONArray userList = loadData();
+        userList.add(user);
+        saveData(userList);
 
     }
 
-//    public void addTransaction(String username, double amount, Date date, String description){
-//        JSONObject transaction = new JSONObject();
-//        transaction.put(AMOUNT, amount);
-//        transaction.put(DATE, date);
-//        transaction.put(DESCRIPTION, description);
-//        transaction.put(ID, getRandomID().toString());
-//
-//        JSONParser parser = new JSONParser();
-//        try {
-//            Object obj = parser.parse(new FileReader("JSON.json"));
-//            JSONArray userList = (JSONArray) obj;
-//            userList.forEach(currentUser -> {
-//                   if (compareUser((JSONObject) currentUser, username)){
-//                        ((JSONObject) currentUser).put(TRANSACTIONS, transaction);
-//
-//            }});
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
+    public void addTransaction(String username, double amount, Date date, String description){
+        JSONObject transaction = new JSONObject();
+        transaction.put(AMOUNT, amount);
+        transaction.put(DATE, date);
+        transaction.put(DESCRIPTION, description);
+        transaction.put(ID, getRandomID().toString());
+
+
+        JSONArray userList = loadData();
+        userList.forEach(currentUser -> {
+            if (compareUser((JSONObject) currentUser, username)){
+                JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(TRANSACTIONS);
+                trans.add(transaction);
+                return;
+            }});
+        saveData(userList);
+
+    }
 
     public UUID getRandomID(){
         return UUID.randomUUID();
