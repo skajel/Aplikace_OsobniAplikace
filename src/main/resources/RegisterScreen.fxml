@@ -70,7 +70,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="signup" mnemonicParsing="false" onAction="#submit" text="SIGN UP">
+            <Button fx:id="signup" mnemonicParsing="false" onMouseClicked="#submit" text="SIGN UP">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>

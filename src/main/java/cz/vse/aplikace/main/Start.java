@@ -24,7 +24,6 @@ public class Start extends Application {
         primaryStage.setTitle("Nebezpečí v továrně");
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(stream);
-
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
