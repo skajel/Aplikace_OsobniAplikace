@@ -11,7 +11,13 @@ import java.util.Map;
 
 public class JSON {
     private static final String FIRST_NAME = "firstName";
-    
+    private static final String LAST_NAME = "lastName";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+    private static final String EMAIL = "email";
+
+
+
 
     public static void main(String[] args) throws FileNotFoundException {
         JSONArray users = new JSONArray();
@@ -49,10 +55,9 @@ public class JSON {
 
     }
 
-    public boolean singIn(String username, String password){
-        return
-    }
+    public String getRandomID(){
 
-    public String signUp
+        return id;
+    }
 
 }

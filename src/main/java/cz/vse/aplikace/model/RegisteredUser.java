@@ -2,7 +2,6 @@ package cz.vse.aplikace.model;
 
 public class RegisteredUser {
 
-    private Wallet wallet;
     private OverallOverview overallOverview;
     private TransactionOverview transactionOverview;
     private Settings settings;
@@ -20,7 +19,6 @@ public class RegisteredUser {
         this.password = password;
         this.email = email;
 
-        wallet = new Wallet( "default", 0);
         overallOverview = new OverallOverview();
         transactionOverview = new TransactionOverview();
         settings = new Settings();
