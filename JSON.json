@@ -2,10 +2,15 @@
   {
     "firstName": "Ondřej",
     "lastName": "Štěpán",
+    "username": "asdasd",
     "transactions" :
           [
             {
-              "amount": 100,
+              "uuid": 54564631,
+              "amount": 100
+            },
+            {
+
             }
           ],
     "standingOrders":
@@ -14,7 +19,7 @@
 
               }
             ]
-  }
+  },
   {
 
   }
