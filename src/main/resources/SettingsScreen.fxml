@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
 
     <left>
         <VBox>
@@ -49,20 +49,17 @@
                      <HBox.margin>
                         <Insets left="198.0" top="15.0" />
                      </HBox.margin>
-                     <image>
-                        <Image url="@profile_pic.jpg" />
-                     </image>
                   </ImageView>
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change username">
+                  <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangeUsername" prefHeight="40.0" prefWidth="120.0" text="Change username">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changePassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change password" textAlignment="CENTER">
+                  <Button fx:id="clearTransactions" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setClearTransactions" prefHeight="40.0" prefWidth="120.0" text="Clear transactions" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
@@ -74,12 +71,12 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeTheme" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change theme">
+                  <Button fx:id="changeTheme" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangeTheme" prefHeight="40.0" prefWidth="120.0" text="Change theme">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changePicture" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change picture">
+                  <Button fx:id="changePicture" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangePicture" prefHeight="40.0" prefWidth="120.0" text="Change picture">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>

@@ -82,7 +82,7 @@ public class RegisterController {
         user.put(USERNAME, username);
         user.put(PASSWORD, password);
         user.put(EMAIL, email);
-        user.put(PICTURE, 1);
+        user.put(PICTURE, "img1.jpg");
         user.put(TRANSACTIONS, "");
         JSONArray userList = JSON.loadData();
         userList.add(user);
