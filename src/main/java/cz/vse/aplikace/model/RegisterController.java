@@ -1,6 +1,6 @@
 package cz.vse.aplikace.model;
 
-import javafx.event.ActionEvent;
+import cz.vse.aplikace.MainController;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -27,14 +28,29 @@ public class RegisterController {
     public static final Pattern VALID_EMAIL_REGEX = Pattern.compile("^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
 
     private void addUserToJSON() throws NoSuchAlgorithmException {
+        if(password.getText().isEmpty()){
+            alert.setText("Password is mandatory");
+            return;
+        }
+
+        if(username.getText().isEmpty()){
+            alert.setText("Username is mandatory");
+            return;
+        }
+
+        if(email.getText().isEmpty()){
+            alert.setText("Email is mandatory");
+            return;
+        }
+
         if (!(password.getText().equals(confirmpassword.getText()))){
             alert.setText("Password doesn't match.");
             return;
         }
-
         Matcher matcher = VALID_EMAIL_REGEX.matcher(email.getText());
         if (!matcher.find()){
             alert.setText("Your email address is invalid");
+            return;
         }
 
         if (JSON.findEmail(email.getText())){
@@ -43,6 +59,12 @@ public class RegisterController {
         }
 
         JSON.addUser(username.getText(), toHexString(getSHA(password.getText())), email.getText());
+        InputStream stream = getClass().getClassLoader().getResourceAsStream("TransactionScreen.fxml");
+        try {
+            MainController.changeScene(stream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -75,6 +97,11 @@ public class RegisterController {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+    }
+
+    public void toLoginScreen(MouseEvent mouseEvent) throws Exception {
+        InputStream stream = getClass().getClassLoader().getResourceAsStream("LoginScreen.fxml");
+        MainController.changeScene(stream);
     }
 }
 
