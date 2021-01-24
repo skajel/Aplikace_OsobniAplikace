@@ -92,7 +92,7 @@ public class RegisterController {
         JSONArray userList = JSON.loadData();
         AtomicBoolean value = new AtomicBoolean(false);
         userList.forEach(currentUser -> {
-            if (JSON.compare((JSONObject) currentUser, email, RegisterController.EMAIL)) {
+            if (JSON.compareUserInfo((JSONObject) currentUser, email, RegisterController.EMAIL)) {
                 value.set(true);
                 return;
             }});
