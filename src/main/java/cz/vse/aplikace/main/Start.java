@@ -1,5 +1,6 @@
 package cz.vse.aplikace.main;
 
+import cz.vse.aplikace.MainController;
 import cz.vse.aplikace.model.RegisterController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,16 +18,9 @@ public class Start extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        primaryStage = new Stage();
         InputStream stream = getClass().getClassLoader().getResourceAsStream("registerScreen.fxml");
-        primaryStage.setResizable(false);
-        primaryStage.setTitle("Moneify");
-        FXMLLoader loader = new FXMLLoader();
-        Parent root = loader.load(stream);
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        MainController.makeWindow(stream);
+
 
     }
 }

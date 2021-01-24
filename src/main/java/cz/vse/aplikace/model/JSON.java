@@ -76,7 +76,7 @@ public class JSON {
 
     }
 
-    public void addTransaction(String username, double amount, Date date, String description){
+    public void addTransaction(String email, double amount, Date date, String description){
         JSONObject transaction = new JSONObject();
         transaction.put(AMOUNT, amount);
         transaction.put(DATE, date);
@@ -86,8 +86,8 @@ public class JSON {
 
         JSONArray userList = loadData();
         userList.forEach(currentUser -> {
-            if (compare((JSONObject) currentUser, username, USERNAME)){
-                JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(TRANSACTIONS);
+            if (compare((JSONObject) currentUser, email, EMAIL)){
+                JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(EMAIL);
                 trans.add(transaction);
                 return;
             }});
