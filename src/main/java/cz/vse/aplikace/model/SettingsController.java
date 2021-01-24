@@ -19,11 +19,20 @@ public class SettingsController {
     public Button logOut;
 
 
-    public void loadOverview() {Menu.loadOverview();}
-    public void loadAccount(){add.setCursor(Cursor.DEFAULT);}
-    public void loadAdd(){Menu.loadAdd(); }
-    public void loadTransaction(){Menu.loadTransaction();}
-    public void loadLogin(){Menu.loadLogin();}
+    public void loadOverview() {
+        overview.setCursor(Cursor.HAND);
+        Menu.loadOverview();}
+    public void loadAccount(){
+        account.setCursor(Cursor.CLOSED_HAND); }
+    public void loadAdd(){
+        add.setCursor(Cursor.HAND);
+        Menu.loadAdd(); }
+    public void loadTransaction(){
+        transaction.setCursor(Cursor.HAND);
+        Menu.loadTransaction();}
+    public void loadLogin(){
+        logOut.setCursor(Cursor.HAND);
+        Menu.loadLogin();}
 }
 
 

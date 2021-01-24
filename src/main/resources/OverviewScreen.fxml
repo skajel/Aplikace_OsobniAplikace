@@ -6,27 +6,27 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.MainController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.OverviewController">
 
     <left>
         <VBox>
             <children>
-                <Button fx:id="account" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Account">
-               <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
-               </VBox.margin></Button>
-                <Button fx:id="add" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Add">
-               <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
-               </VBox.margin></Button>
-                <Button fx:id="transaction" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Transaction">
-               <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
-               </VBox.margin></Button>
-                <Button fx:id="overview" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Overview">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="10.0" top="20.0" />
-               </VBox.margin></Button>
+                <Button fx:id="account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="80.0" text="Account">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="80.0" text="Add">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="80.0" text="Transaction">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="80.0" text="Overview">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" top="20.0" />
+                    </VBox.margin></Button>
                 <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@logo.png" />

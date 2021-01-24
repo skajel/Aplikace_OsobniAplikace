@@ -1,5 +1,7 @@
 package cz.vse.aplikace.model;
 
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -11,7 +13,22 @@ public class AddController {
     public static final String DATE = "date";
     public static final String DESCRIPTION = "description";
     public static final String ID = "id";
+    public Button overview;
+    public Button transaction;
+    public Button add;
+    public Button account;
 
+    public void loadOverview() {
+        overview.setCursor(Cursor.HAND);
+        Menu.loadOverview();}
+    public void loadAccount(){
+        account.setCursor(Cursor.HAND);
+        Menu.loadAccount();}
+    public void loadAdd(){
+        add.setCursor(Cursor.CLOSED_HAND); }
+    public void loadTransaction(){
+        transaction.setCursor(Cursor.HAND);
+        Menu.loadTransaction();}
 
     public void addTransaction(String email, double amount, Date date, String description){
         JSONObject transaction = new JSONObject();
