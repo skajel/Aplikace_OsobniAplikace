@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -11,6 +12,8 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterController {
     public TextField username;
@@ -19,9 +22,28 @@ public class RegisterController {
     public TextField email;
     public Hyperlink haveanaccount;
     public Button signup;
+    public Label alert;
+
+    public static final Pattern VALID_EMAIL_REGEX = Pattern.compile("^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
 
     private void addUserToJSON() throws NoSuchAlgorithmException {
+        if (!(password.getText().equals(confirmpassword.getText()))){
+            alert.setText("Password doesn't match.");
+            return;
+        }
+
+        Matcher matcher = VALID_EMAIL_REGEX.matcher(email.getText());
+        if (!matcher.find()){
+            alert.setText("Your email address is invalid");
+        }
+
+        if (JSON.findEmail(email.getText())){
+            alert.setText("Email address '" + email.getText() + "' is being used. Change your email or sign in with this email.");
+            return;
+        }
+
         JSON.addUser(username.getText(), toHexString(getSHA(password.getText())), email.getText());
+
     }
 
     public static byte[] getSHA(String input) throws NoSuchAlgorithmException
@@ -32,7 +54,6 @@ public class RegisterController {
 
     public static String toHexString(byte[] hash)
     {
-
         BigInteger number = new BigInteger(1, hash);
         StringBuilder hexString = new StringBuilder(number.toString(16));
         while (hexString.length() < 32)
@@ -42,13 +63,8 @@ public class RegisterController {
         return hexString.toString();
     }
 
-    public byte[] hashPassword(String originalString) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedHash = digest.digest(originalString.getBytes(StandardCharsets.UTF_8));
-        return encodedHash;
-    }
-
     public void submit(MouseEvent mouseEvent) {
+        alert.setText("");
         signup.setCursor(Cursor.HAND);
         executeSubmit();
     }
