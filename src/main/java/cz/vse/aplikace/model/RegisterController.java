@@ -24,6 +24,7 @@ public class RegisterController {
     public static final String PASSWORD = "password";
     public static final String EMAIL = "email";
     public static final String TRANSACTIONS = "transactions";
+    public static final String PICTURE = "picture";
 
     public TextField username;
     public TextField password;
@@ -81,6 +82,7 @@ public class RegisterController {
         user.put(USERNAME, username);
         user.put(PASSWORD, password);
         user.put(EMAIL, email);
+        user.put(PICTURE, 1);
         user.put(TRANSACTIONS, "");
         JSONArray userList = JSON.loadData();
         userList.add(user);
