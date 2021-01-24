@@ -7,16 +7,24 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterController {
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+    public static final String EMAIL = "email";
+    public static final String TRANSACTIONS = "transactions";
+
     public TextField username;
     public TextField password;
     public TextField confirmpassword;
@@ -53,12 +61,12 @@ public class RegisterController {
             return;
         }
 
-        if (JSON.findEmail(email.getText())){
+        if (findEmail(email.getText())){
             alert.setText("Email address '" + email.getText() + "' is being used. Change your email or sign in with this email.");
             return;
         }
 
-        JSON.addUser(username.getText(), toHexString(getSHA(password.getText())), email.getText());
+        addUser(username.getText(), toHexString(getSHA(password.getText())), email.getText());
         InputStream stream = getClass().getClassLoader().getResourceAsStream("TransactionScreen.fxml");
         try {
             MainController.changeScene(stream);
@@ -66,6 +74,29 @@ public class RegisterController {
             e.printStackTrace();
         }
 
+    }
+
+    public static void addUser(String username, String password, String email) {
+        JSONObject user = new JSONObject();
+        user.put(USERNAME, username);
+        user.put(PASSWORD, password);
+        user.put(EMAIL, email);
+        user.put(TRANSACTIONS, "");
+        JSONArray userList = JSON.loadData();
+        userList.add(user);
+        JSON.saveData(userList);
+
+    }
+
+    public static boolean findEmail(String email){
+        JSONArray userList = JSON.loadData();
+        AtomicBoolean value = new AtomicBoolean(false);
+        userList.forEach(currentUser -> {
+            if (JSON.compare((JSONObject) currentUser, email, RegisterController.EMAIL)) {
+                value.set(true);
+                return;
+            }});
+        return value.get();
     }
 
     public static byte[] getSHA(String input) throws NoSuchAlgorithmException

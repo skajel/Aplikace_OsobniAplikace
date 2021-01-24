@@ -40,14 +40,6 @@ public class SettingsController implements Initializable {
 
     @FXML
     public void loadOverview(ActionEvent event) throws IOException {
-
-        InputStream stream = getClass().getClassLoader().getResourceAsStream("OverviewScreen.fxml");
-        FXMLLoader loader = new FXMLLoader();
-        Parent OverviewScreen = loader.load(stream);
-
-        Scene OverviewScreenScene = new Scene(OverviewScreen);
-        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        primaryStage.setScene(OverviewScreenScene);
     }
 
     @FXML
