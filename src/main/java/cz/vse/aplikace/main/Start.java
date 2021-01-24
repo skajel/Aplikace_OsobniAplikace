@@ -22,6 +22,5 @@ public class Start extends Application {
         MainController.makeWindow(stream);
 
 
-
     }
 }

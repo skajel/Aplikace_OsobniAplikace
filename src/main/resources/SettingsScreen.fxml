@@ -8,24 +8,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.MainController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
 
     <left>
         <VBox>
             <children>
-                <Button fx:id="account" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Account">
+                <Button fx:id="account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="80.0" text="Account">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="add" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Add">
+                <Button fx:id="add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="80.0" text="Add">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="transaction" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Transaction">
+                <Button fx:id="transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="80.0" text="Transaction">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="overview" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Overview">
+                <Button fx:id="overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="80.0" text="Overview">
                     <VBox.margin>
                         <Insets bottom="20.0" left="10.0" top="20.0" />
                     </VBox.margin></Button>
@@ -45,7 +45,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="profilepic" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profilePic" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="198.0" top="15.0" />
                      </HBox.margin>
@@ -57,12 +57,12 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeusername" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change username">
+                  <Button fx:id="changeUsername" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change username">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changepassword" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change password" textAlignment="CENTER">
+                  <Button fx:id="changePassword" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change password" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
@@ -74,12 +74,12 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="Changecurrency" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change currency">
+                  <Button fx:id="changeCurrency" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change currency">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="Changepicture" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change picture">
+                  <Button fx:id="changePicture" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change picture">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
@@ -93,7 +93,7 @@
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changetheme" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(11,156,49,0.25);" text="Change theme" textFill="#a19e9e">
+                  <Button fx:id="changeTheme" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(11,156,49,0.25);" text="Change theme" textFill="#a19e9e">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
@@ -103,7 +103,7 @@
             <HBox prefHeight="100.0" prefWidth="200.0" />
             <HBox layoutX="10.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="logout" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
+                  <Button fx:id="logOut" mnemonicParsing="false" onAction="#loadLogIn" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
                      <HBox.margin>
                         <Insets bottom="10.0" left="180.0" right="25.0" top="10.0" />
                      </HBox.margin>
