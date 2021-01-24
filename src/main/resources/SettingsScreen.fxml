@@ -103,7 +103,7 @@
             <HBox prefHeight="100.0" prefWidth="200.0" />
             <HBox layoutX="10.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="logOut" mnemonicParsing="false" onAction="#loadLogIn" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
+                  <Button fx:id="logOut" mnemonicParsing="false" onMouseClicked="#loadLogIn" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
                      <HBox.margin>
                         <Insets bottom="10.0" left="180.0" right="25.0" top="10.0" />
                      </HBox.margin>
