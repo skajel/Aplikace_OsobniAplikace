@@ -8,7 +8,6 @@ import java.io.InputStream;
 public class Menu {
 
     public static void loadOverview() {
-
         InputStream stream = Menu.class.getClassLoader().getResourceAsStream("OverviewScreen.fxml");
         try {
             MainController.changeScene(stream);

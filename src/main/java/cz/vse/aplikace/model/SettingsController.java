@@ -1,5 +1,6 @@
 package cz.vse.aplikace.model;
 
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
@@ -19,7 +20,7 @@ public class SettingsController {
 
 
     public void loadOverview() {Menu.loadOverview();}
-    public void loadAccount(){Menu.loadAccount();}
+    public void loadAccount(){add.setCursor(Cursor.DEFAULT);}
     public void loadAdd(){Menu.loadAdd(); }
     public void loadTransaction(){Menu.loadTransaction();}
     public void loadLogin(){Menu.loadLogin();}
