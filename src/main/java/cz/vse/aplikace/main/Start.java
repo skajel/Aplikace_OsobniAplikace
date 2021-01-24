@@ -21,13 +21,12 @@ public class Start extends Application {
         primaryStage = new Stage();
         InputStream stream = getClass().getClassLoader().getResourceAsStream("registerScreen.fxml");
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Nebezpečí v továrně");
+        primaryStage.setTitle("Moneify");
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(stream);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
     }
 }
