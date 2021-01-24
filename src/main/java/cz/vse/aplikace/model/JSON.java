@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.util.Date;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class JSON {
     private static final String USERNAME = "username";
@@ -51,6 +52,17 @@ public class JSON {
         }
     }
 
+    public static boolean findEmail(String email){
+        JSONArray userList = loadData();
+        AtomicBoolean value = new AtomicBoolean(false);
+        userList.forEach(currentUser -> {
+            if (compare((JSONObject) currentUser, email, EMAIL)) {
+                value.set(true);
+                return;
+            }});
+        return value.get();
+    }
+
     public static void addUser(String username, String password, String email) {
         JSONObject user = new JSONObject();
         user.put(USERNAME, username);
@@ -74,7 +86,7 @@ public class JSON {
 
         JSONArray userList = loadData();
         userList.forEach(currentUser -> {
-            if (compareUser((JSONObject) currentUser, username)){
+            if (compare((JSONObject) currentUser, username, USERNAME)){
                 JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(TRANSACTIONS);
                 trans.add(transaction);
                 return;
@@ -87,9 +99,9 @@ public class JSON {
         return UUID.randomUUID();
     }
 
-    public static boolean compareUser(JSONObject user, String defaultUser){
-        String searchedUser = (String) user.get(USERNAME);
-        if (defaultUser.equals(searchedUser)){
+    public static boolean compare(JSONObject user, String defaultTerm, String type){
+        String searchedTerm = (String) user.get(type);
+        if (defaultTerm.equals(searchedTerm)){
             return true;
         }
         return false;
