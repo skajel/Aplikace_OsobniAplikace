@@ -57,55 +57,45 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeUsername" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change username">
+                  <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change username">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changePassword" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change password" textAlignment="CENTER">
+                  <Button fx:id="changePassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change password" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="25.0" />
                </VBox.margin>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeCurrency" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change currency">
+                  <Button fx:id="changeTheme" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change theme">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="changePicture" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change picture">
+                  <Button fx:id="changePicture" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Change picture">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="premium" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(11,156,49,0.25);" text="Premium" textFill="#a19e9e">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="changeTheme" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(11,156,49,0.25);" text="Change theme" textFill="#a19e9e">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
             <HBox prefHeight="100.0" prefWidth="200.0" />
             <HBox layoutX="10.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="logOut" mnemonicParsing="false" onAction="#loadLogin" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
+                  <Button fx:id="logOut" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loadLogin" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: green;" text="Log out" textFill="WHITE">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="180.0" right="25.0" top="10.0" />
+                        <Insets bottom="20.0" left="175.0" right="25.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>

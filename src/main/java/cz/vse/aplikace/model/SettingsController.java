@@ -12,9 +12,7 @@ public class SettingsController {
     public ImageView profilePic;
     public Button changeUsername;
     public Button changePassword;
-    public Button changeCurrency;
     public Button changePicture;
-    public Button premium;
     public Button changeTheme;
     public Button logOut;
 
