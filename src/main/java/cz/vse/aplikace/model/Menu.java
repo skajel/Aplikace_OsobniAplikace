@@ -40,7 +40,6 @@ public class Menu {
         }
     }
     public static void loadLogin(){
-
         InputStream stream = Menu.class.getClassLoader().getResourceAsStream("LoginScreen.fxml");
         try {
             MainController.changeScene(stream);
@@ -48,5 +47,15 @@ public class Menu {
             e.printStackTrace();
         }
     }
+    public static void loadChangeUsername() {
+
+        InputStream stream = Menu.class.getClassLoader().getResourceAsStream("ChangeUsername.fxml");
+        try {
+            MainController.changeScene(stream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+
 

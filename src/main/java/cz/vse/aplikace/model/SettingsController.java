@@ -1,32 +1,16 @@
 package cz.vse.aplikace.model;
 
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import static cz.vse.aplikace.model.RegisterController.TRANSACTIONS;
-
 
 public class SettingsController {
     public Button account;
     public Button add;
     public Button transaction;
     public Button overview;
-
     public ImageView profilePic;
 
     public Button changeUsername;
@@ -35,67 +19,74 @@ public class SettingsController {
     public Button changeTheme;
     public Button logOut;
 
-    private FileChooser fileChooser;
-    private File filePath;
+    public Image image1 = new Image("img1.jpg");
+    public Image image2 = new Image("img2.jpg");
+    public Image image3 = new Image("img3.jpg");
+    public Image currentImage = image1;
 
 
+    public void initialize(){
+        defaultPicture();
+    }
+    public void loadOverview() {
+        overview.setCursor(Cursor.HAND);
+        Menu.loadOverview();
+    }
 
-   public void initialize(){
-       defaultPicture(); }
+    public void loadAccount() {
+        account.setCursor(Cursor.CLOSED_HAND);
+    }
 
-   public void loadOverview() {
-       overview.setCursor(Cursor.HAND);
-       Menu.loadOverview();}
-   public void loadAccount(){
-       account.setCursor(Cursor.CLOSED_HAND); }
-   public void loadAdd(){
-       add.setCursor(Cursor.HAND);
-       Menu.loadAdd(); }
-   public void loadTransaction(){
-       transaction.setCursor(Cursor.HAND);
-       Menu.loadTransaction();}
-   public void loadLogin(){
-       logOut.setCursor(Cursor.HAND);
-       Menu.loadLogin();
-   }
-   public void setChangePicture(ActionEvent event) {
+    public void loadAdd() {
+        add.setCursor(Cursor.HAND);
+        Menu.loadAdd();
+    }
 
-        Stage stage = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
+    public void loadTransaction() {
+        transaction.setCursor(Cursor.HAND);
+        Menu.loadTransaction();
+    }
 
-        fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image");
+    public void loadLogin() {
+        logOut.setCursor(Cursor.HAND);
+        Menu.loadLogin();
+    }
 
-        String userDirectoryString = System.getProperty("user.home");
-        File userDirectory = new File(userDirectoryString);
+    public void loadChangeUsername(){
+        changeUsername.setCursor(Cursor.HAND);
+        Menu.loadChangeUsername();
+    }
 
-        if (!userDirectory.canRead())
-            userDirectory = new File ("c:/");
-        fileChooser.setInitialDirectory(userDirectory);
-        this.filePath = fileChooser.showOpenDialog(stage);
+    public void setChangeUsername(){
+        loadChangeUsername();
+    }
 
-        try {
-            BufferedImage bufferedImage = ImageIO.read(filePath);
-            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+    public void setChangePicture(ActionEvent event) {
+        if (this.profilePic.getImage() == this.image1) {
+            this.currentImage = this.image2;
+        } else if (this.profilePic.getImage() == this.image2) {
+            this.currentImage = this.image3;
+        } else {
+            this.currentImage = this.image1;
+        }
+        this.defaultPicture();
+    }
 
-            profilePic.setImage(image);
+    public void defaultPicture() {
+        profilePic.setImage(this.currentImage);
+    }
 
-        } catch (IOException e) {
-            e.printStackTrace();}}
-   public void defaultPicture(){Image image = new Image("img1.jpg");
-   profilePic.setImage(image);}
-   public void setClearTransactions(){
-       clearTransactions();}
+    public void setClearTransactions() {
+        clearTransactions();
+    }
 
-   public void clearTransactions() {
-   }
+    public void clearTransactions() {
+    }
 
-   public void setChangeUsername(ActionEvent event){
-   }
-
-   public void setChangeTheme(ActionEvent event) {
-   }
-
+    public void setChangeTheme(ActionEvent event) {
+    }
 }
+
 
 
 
