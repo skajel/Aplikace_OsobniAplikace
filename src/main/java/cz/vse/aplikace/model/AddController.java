@@ -12,10 +12,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class AddController{
-    public static final String AMOUNT = "amount";
-    public static final String DATE = "date";
-    public static final String DESCRIPTION = "description";
-    public static final String ID = "id";
+
     public Button overview;
     public Button transaction;
     public Button add;
@@ -59,14 +56,11 @@ public class AddController{
 
 
     public void addTransaction(String email, double amount, Date date, String description){
-
-
-
         JSONObject transaction = new JSONObject();
-        transaction.put(AMOUNT, amount);
-        transaction.put(DATE, date);
-        transaction.put(DESCRIPTION, description);
-        transaction.put(ID, getRandomID().toString());
+        transaction.put(MainController.AMOUNT, amount);
+        transaction.put(MainController.DATE, date);
+        transaction.put(MainController.DESCRIPTION, description);
+        transaction.put(MainController.ID, getRandomID().toString());
 
 
         JSONArray userList = JSON.loadData();
