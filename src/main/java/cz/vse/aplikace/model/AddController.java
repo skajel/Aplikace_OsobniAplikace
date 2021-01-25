@@ -1,14 +1,16 @@
 package cz.vse.aplikace.model;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
 import java.util.Date;
 import java.util.UUID;
 
-public class AddController {
+public class AddController{
     public static final String AMOUNT = "amount";
     public static final String DATE = "date";
     public static final String DESCRIPTION = "description";
@@ -17,6 +19,29 @@ public class AddController {
     public Button transaction;
     public Button add;
     public Button account;
+    public ComboBox CategoryComboBox;
+    public TextField addTransactionSum;
+    public DatePicker addTransactionDate;
+    public TextField addTransactionDescription;
+    public Button addTransactionAdd;
+
+    public void initialize(){
+        addTransactionSum.setPromptText("Enter numbers only");
+        addTransactionDescription.setPromptText("Short description");
+        CategoryComboBox.setPromptText("Choose category");
+        CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
+        addTransactionDate.setPromptText("Choose date");
+        addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")){
+                    addTransactionSum.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+    }
+
+
 
     public void loadOverview() {
         overview.setCursor(Cursor.HAND);
@@ -30,7 +55,12 @@ public class AddController {
         transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();}
 
+
+
     public void addTransaction(String email, double amount, Date date, String description){
+
+
+
         JSONObject transaction = new JSONObject();
         transaction.put(AMOUNT, amount);
         transaction.put(DATE, date);
@@ -53,4 +83,9 @@ public class AddController {
         return UUID.randomUUID();
     }
 
+
+
+
+
 }
+

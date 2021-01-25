@@ -42,7 +42,7 @@
     <center>
         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="addCategory" prefHeight="307.0" prefWidth="500.0">
+            <VBox prefHeight="307.0" prefWidth="500.0">
                <children>
                   <Label prefHeight="26.0" prefWidth="93.0" text="Transaction">
                      <VBox.margin>
@@ -73,11 +73,11 @@
                         <Insets left="75.0" />
                      </padding>
                   </Label>
-                  <ChoiceBox fx:id="addTransactionCategory" prefHeight="25.0" prefWidth="534.0">
+                  <ComboBox fx:id="CategoryComboBox" prefHeight="25.0" prefWidth="289.0">
                      <VBox.margin>
                         <Insets left="150.0" right="150.0" />
                      </VBox.margin>
-                  </ChoiceBox>
+                  </ComboBox>
                   <Label prefHeight="17.0" prefWidth="667.0" text="Date">
                      <VBox.margin>
                         <Insets left="150.0" right="150.0" top="10.0" />
