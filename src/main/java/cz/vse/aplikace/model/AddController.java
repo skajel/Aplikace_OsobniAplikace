@@ -1,5 +1,6 @@
 package cz.vse.aplikace.model;
 
+import cz.vse.aplikace.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -70,8 +71,8 @@ public class AddController{
 
         JSONArray userList = JSON.loadData();
         userList.forEach(currentUser -> {
-            if (JSON.compareUserInfo((JSONObject) currentUser, email, RegisterController.EMAIL)){
-                JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(RegisterController.TRANSACTIONS);
+            if (JSON.compareUserInfo((JSONObject) currentUser, email, MainController.EMAIL)){
+                JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(MainController.TRANSACTIONS);
                 trans.add(transaction);
                 return;
             }});

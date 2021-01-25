@@ -16,7 +16,7 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin></ImageView>
-            <Label fx:id="alert">
+            <Label fx:id="register_alert">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
@@ -35,7 +35,7 @@
                            </padding>
                         </TextField>
                         <Label text="PASSWORD" />
-                        <PasswordField fx:id="password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                        <PasswordField fx:id="register_password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
@@ -51,7 +51,7 @@
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label text="E-MAIL" />
-                        <TextField fx:id="email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                        <TextField fx:id="register_email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
                            <VBox.margin>
                               <Insets bottom="20.0" top="5.0" />
                            </VBox.margin>
@@ -60,7 +60,7 @@
                            </padding>
                         </TextField>
                         <Label text="CONFIRM PASSWORD" />
-                        <PasswordField fx:id="confirmpassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                        <PasswordField fx:id="confirm_password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
@@ -75,12 +75,12 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="signup" mnemonicParsing="false" onMouseClicked="#submit" text="SIGN UP">
+            <Button fx:id="sign_up" mnemonicParsing="false" onMouseClicked="#submit" text="SIGN UP">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Hyperlink fx:id="haveanaccount" onMouseClicked="#toLoginScreen" text="I already have an account" />
+            <Hyperlink onMouseClicked="#toLoginScreen" text="I already have an account" />
          </children>
       </VBox>
    </center>

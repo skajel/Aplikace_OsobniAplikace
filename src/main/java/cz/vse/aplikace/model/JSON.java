@@ -1,14 +1,15 @@
 package cz.vse.aplikace.model;
 
+import cz.vse.aplikace.MainController;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import sun.applet.Main;
 
 import java.io.*;
-import java.util.Date;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class JSON {
     public static final String SAVE_FILE_NAME = "JSON.json";
@@ -47,6 +48,30 @@ public class JSON {
             return true;
         }
         return false;
+    }
+
+    public static boolean findEmail(String email) {
+        JSONArray userList = JSON.loadData();
+        AtomicBoolean value = new AtomicBoolean(false);
+        userList.forEach(currentUser -> {
+            if (JSON.compareUserInfo((JSONObject) currentUser, email, MainController.EMAIL)) {
+                value.set(true);
+                return;
+            }
+        });
+        return value.get();
+    }
+
+    public static JSONObject findUser(String email){
+        JSONArray userList = JSON.loadData();
+        AtomicReference<JSONObject> user = new AtomicReference<>(null);
+        userList.forEach(currentUser -> {
+            if (JSON.compareUserInfo((JSONObject) currentUser, email, MainController.EMAIL)) {
+                user.set((JSONObject) currentUser);
+                return;
+            }
+        });
+        return user.get();
     }
 
 

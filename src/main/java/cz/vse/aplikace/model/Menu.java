@@ -47,6 +47,14 @@ public class Menu {
             e.printStackTrace();
         }
     }
+    public static void loadRegister(){
+        InputStream stream = Menu.class.getClassLoader().getResourceAsStream("RegisterScreen.fxml");
+        try {
+            MainController.changeScene(stream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void loadChangeUsername() {
 
         InputStream stream = Menu.class.getClassLoader().getResourceAsStream("ChangeUsername.fxml");
