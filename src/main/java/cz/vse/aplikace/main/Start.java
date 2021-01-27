@@ -1,6 +1,7 @@
 package cz.vse.aplikace.main;
 
 import cz.vse.aplikace.MainController;
+import cz.vse.aplikace.model.Category;
 import cz.vse.aplikace.model.JSON;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -37,5 +38,6 @@ public class Start extends Application {
     public void start(Stage primaryStage) throws Exception {
         InputStream stream = getClass().getClassLoader().getResourceAsStream("LoginScreen.fxml");
         MainController.makeWindow(stream);
+     
     }
 }

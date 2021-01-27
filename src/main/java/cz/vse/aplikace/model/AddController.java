@@ -82,7 +82,7 @@ public class AddController {
             return;
         }
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
-        addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL),
+        addTransaction((String) JSON.getCurrentUser().get(MainController.EMAIL),
                 sum = Integer.parseInt(addTransactionSum.getText()),
                 (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
                 (CategoryComboBox.getSelectionModel().getSelectedItem()).toString(),

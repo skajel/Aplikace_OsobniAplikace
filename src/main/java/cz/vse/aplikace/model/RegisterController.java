@@ -71,7 +71,7 @@ public class RegisterController {
         JSONArray userList = JSON.loadData();
         userList.add(user);
         JSON.saveData(userList);
-        LoginController.setCurrentUser(user);
+        JSON.setCurrentUser(user);
 
     }
 
