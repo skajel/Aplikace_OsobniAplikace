@@ -8,17 +8,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
-import java.io.InputStream;
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterController {
+
     public TextField username;
     public TextField register_password;
     public TextField confirm_password;
@@ -62,6 +57,8 @@ public class RegisterController {
         addUser(username.getText(), MainController.toHexString(MainController.getSHA(register_password.getText())), register_email.getText());
         Menu.loadTransaction();
 
+
+
     }
 
     public static void addUser(String username, String password, String email) {
@@ -70,15 +67,13 @@ public class RegisterController {
         user.put(MainController.PASSWORD, password);
         user.put(MainController.EMAIL, email);
         user.put(MainController.PICTURE, "img1.jpg");
-        user.put(MainController.TRANSACTIONS, "");
+        user.put(MainController.TRANSACTIONS, new JSONArray());
         JSONArray userList = JSON.loadData();
         userList.add(user);
         JSON.saveData(userList);
+        LoginController.setCurrentUser(user);
 
     }
-
-
-
 
     public void submit(MouseEvent mouseEvent) {
         register_alert.setText("");

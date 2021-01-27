@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import org.json.simple.JSONObject;
-import cz.vse.aplikace.model.*;
 import java.security.NoSuchAlgorithmException;
 
 
@@ -16,8 +15,7 @@ public class LoginController {
     public TextField login_password;
     public Label login_alert;
     public Button sign_in;
-    public JSONObject currentUser;
-
+    public static JSONObject currentUser;
 
 
     public void signIn(MouseEvent mouseEvent) throws NoSuchAlgorithmException {
@@ -49,19 +47,18 @@ public class LoginController {
             return;
         }
 
-        setCurretUser(user);
+        setCurrentUser(user);
         Menu.loadTransaction();
 
 
     }
-    public  void setCurretUser(JSONObject args){
-        currentUser = args;
+    public static void setCurrentUser(JSONObject user){
+        currentUser = user;
     }
 
-    public JSONObject getCurrentUser(){
+    public static JSONObject getCurrentUser(){
         return currentUser;
     }
-
 
 
     private String hashPassword() throws NoSuchAlgorithmException {

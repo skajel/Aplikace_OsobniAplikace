@@ -70,7 +70,7 @@ public class AddController {
         }
 
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
-        addTransaction("burm10@gmail.com", sum = Integer.parseInt(addTransactionSum.getText()),
+        addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL), sum = Integer.parseInt(addTransactionSum.getText()),
                 CategoryComboBox.toString(), addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
