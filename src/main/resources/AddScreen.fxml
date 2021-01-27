@@ -106,7 +106,7 @@
                   </TextField>
                   <VBox prefHeight="57.0" prefWidth="500.0">
                      <children>
-                        <Button fx:id="addTransactionAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Add">
+                        <Button fx:id="addTransactionAdd" onAction="#add" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Add">
                            <VBox.margin>
                               <Insets bottom="15.0" left="205.0" right="15.0" top="10.0" />
                            </VBox.margin>
