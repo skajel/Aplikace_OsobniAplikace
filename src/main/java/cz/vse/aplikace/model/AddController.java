@@ -38,11 +38,13 @@ public class AddController {
         addTransactionDate.setEditable(false);
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
+        add_gainComboBox.setPromptText("Gain or not");
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
         clearButton.setTooltip(new Tooltip("Clear all boxes"));
         CategoryComboBox.setTooltip(new Tooltip("Choose category"));
+        add_gainComboBox.setTooltip(new Tooltip("Gain or not"));
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -65,6 +67,11 @@ public class AddController {
             return;
         }
 
+        if (add_gainComboBox.getSelectionModel().isEmpty()) {
+            add_alert.setText("Choose gain or spending");
+            return;
+        }
+
         if (addTransactionDate.getValue() == null) {
             add_alert.setText("Date is mandatory");
             return;
@@ -74,16 +81,19 @@ public class AddController {
             add_alert.setText("Description is mandatory");
             return;
         }
-CategoryComboBox.getSelectionModel().getSelectedItem();
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
-        addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL), sum = Integer.parseInt(addTransactionSum.getText()),
-                (CategoryComboBox.getSelectionModel().getSelectedItem()).toString(), addDate, addTransactionDescription.getText());
+        addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL),
+                sum = Integer.parseInt(addTransactionSum.getText()),
+                (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
+                (CategoryComboBox.getSelectionModel().getSelectedItem()).toString(),
+                addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
 
-    public void addTransaction(String email, double amount, String category, Date date, String description) {
+    public void addTransaction(String email, double amount,String gainOrNot, String category, Date date, String description) {
         JSONObject transaction = new JSONObject();
         transaction.put(MainController.AMOUNT, amount);
+        transaction.put(MainController.GAINOTNOT,gainOrNot);
         transaction.put(MainController.CATEGORY, category);
         transaction.put(MainController.DATE, date.toString());
         transaction.put(MainController.DESCRIPTION, description);
