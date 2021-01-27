@@ -14,7 +14,7 @@ public class Start extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        InputStream stream = getClass().getClassLoader().getResourceAsStream("AddScreen.fxml");
+        InputStream stream = getClass().getClassLoader().getResourceAsStream("RegisterScreen.fxml");
         MainController.makeWindow(stream);
     }
 }
