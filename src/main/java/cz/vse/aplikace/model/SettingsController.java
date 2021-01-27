@@ -7,10 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class SettingsController {
-    public Button account;
-    public Button add;
-    public Button transaction;
-    public Button overview;
+    public Button settings_account;
+    public Button setting_add;
+    public Button settings_transaction;
+    public Button settings_overview;
     public ImageView profilePic;
 
     public Button changeUsername;
@@ -36,7 +36,7 @@ public class SettingsController {
      *
      */
     public void loadOverview() {
-        overview.setCursor(Cursor.HAND);
+        settings_overview.setCursor(Cursor.HAND);
         Menu.loadOverview();
     }
 
@@ -44,14 +44,14 @@ public class SettingsController {
      *
      */
     public void loadAccount() {
-        account.setCursor(Cursor.CLOSED_HAND);
+        settings_account.setCursor(Cursor.CLOSED_HAND);
     }
 
     /**
      *
      */
     public void loadAdd() {
-        add.setCursor(Cursor.HAND);
+        setting_add.setCursor(Cursor.HAND);
         Menu.loadAdd();
     }
 
@@ -59,7 +59,7 @@ public class SettingsController {
      *
      */
     public void loadTransaction() {
-        transaction.setCursor(Cursor.HAND);
+        settings_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();
     }
 

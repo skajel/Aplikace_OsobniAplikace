@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
     <left>
         <VBox>
             <children>
-                <Button fx:id="account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="80.0" text="Account">
+                <Button fx:id="settings_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="80.0" text="Account">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="80.0" text="Add">
+                <Button fx:id="setting_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="80.0" text="Add">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="80.0" text="Transaction">
+                <Button fx:id="settings_transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="80.0" text="Transaction">
                     <VBox.margin>
                         <Insets left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <Button fx:id="overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="80.0" text="Overview">
+                <Button fx:id="settings_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="80.0" text="Overview">
                     <VBox.margin>
                         <Insets bottom="20.0" left="10.0" top="20.0" />
                     </VBox.margin></Button>
@@ -53,7 +50,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onAction="#setChangeUsername" minWidth="-Infinity" mnemonicParsing="false"  prefHeight="40.0" prefWidth="120.0" text="Change username">
+                  <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangeUsername" prefHeight="40.0" prefWidth="120.0" text="Change username">
                      <HBox.margin>
                         <Insets bottom="10.0" left="100.0" right="25.0" top="10.0" />
                      </HBox.margin>
