@@ -5,7 +5,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import sun.applet.Main;
 
 import java.io.*;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -15,9 +14,9 @@ public class JSON {
     public static final String SAVE_FILE_NAME = "JSON.json";
 
     public static JSONArray loadData() {
-        JSONParser jsonParser = new JSONParser();
         try {
             FileReader reader = new FileReader(SAVE_FILE_NAME);
+            JSONParser jsonParser = new JSONParser();
             Object obj = jsonParser.parse(reader);
             JSONArray userList = (JSONArray) obj;
             reader.close();

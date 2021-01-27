@@ -25,13 +25,16 @@ public class AddController {
     public DatePicker addTransactionDate;
     public TextField addTransactionDescription;
     public Button addTransactionAdd;
-    public Label register_alert;
+    public Label add_alert;
     public double sum;
     public Button clearButton;
 
+
+
     public void initialize() {
-        addTransactionSum.setPromptText("Enter numbers only");
+        addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");
+        addTransactionDate.setEditable(false);
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
         addTransactionDate.setPromptText("Choose date");
@@ -50,28 +53,28 @@ public class AddController {
 
     private void addTransactionToJSON() throws NoSuchAlgorithmException {
         if (addTransactionSum.getText().isEmpty()) {
-            register_alert.setText("Sum is mandatory");
+            add_alert.setText("Sum is mandatory");
             return;
         }
 
-        if (CategoryComboBox.getItems().size() == 0) {
-            register_alert.setText("Username is mandatory");
+        if (CategoryComboBox.getSelectionModel().isEmpty()) {
+            add_alert.setText("Category is mandatory");
             return;
         }
 
         if (addTransactionDate.getValue() == null) {
-            register_alert.setText("Date is mandatory");
+            add_alert.setText("Date is mandatory");
             return;
         }
 
         if (addTransactionDescription.getText().isEmpty()) {
-            register_alert.setText("Description is mandatory");
+            add_alert.setText("Description is mandatory");
             return;
         }
 
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
-        addTransaction("burm10@gmail.com", sum = Integer.parseInt(addTransactionSum.getText()),
-                CategoryComboBox.toString(), addDate, addTransactionDescription.getText());
+        addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL), sum = Integer.parseInt(addTransactionSum.getText()),
+                CategoryComboBox.getSelectionModel().toString(), addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
 
@@ -96,6 +99,7 @@ public class AddController {
 
     public void addTransaction(ActionEvent actionEvent) {
         addTransactionAdd.setCursor(Cursor.HAND);
+        add_alert.setText("");
         executeAdd();
     }
 
