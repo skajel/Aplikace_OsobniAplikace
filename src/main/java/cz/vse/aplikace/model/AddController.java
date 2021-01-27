@@ -21,6 +21,7 @@ public class AddController {
     public Button add_add;
     public Button add_account;
     public ComboBox<Category> CategoryComboBox;
+    public ComboBox<GainOrNot> add_gainComboBox;
     public TextField addTransactionSum;
     public DatePicker addTransactionDate;
     public TextField addTransactionDescription;
@@ -37,6 +38,7 @@ public class AddController {
         addTransactionDate.setEditable(false);
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
+        add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
         clearButton.setTooltip(new Tooltip("Clear all boxes"));

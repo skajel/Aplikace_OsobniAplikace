@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.AddController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.AddController">
 
     <left>
        <VBox>
@@ -54,89 +54,110 @@
                   </Label>
                   <Label prefHeight="17.0" prefWidth="503.0" text="Sum">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" top="10.0" />
+                        <Insets left="130.0" top="10.0" />
                      </VBox.margin>
-                     <padding>
-                        <Insets left="90.0" />
-                     </padding>
                   </Label>
-                  <HBox prefHeight="205.0" prefWidth="500.0">
+                  <HBox prefHeight="0.0" prefWidth="500.0">
                      <children>
-                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0">
+                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0">
                            <HBox.margin>
-                              <Insets left="150.0" right="140.0" />
+                              <Insets left="50.0" />
                            </HBox.margin>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </TextField>
-                        <Label prefHeight="25.0" prefWidth="207.0" text="CZK">
+                        <Label prefHeight="25.0" prefWidth="50" text="CZK">
                            <HBox.margin>
-                              <Insets left="-135.0" />
+                              <Insets left="15.0" />
                            </HBox.margin>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </Label>
+
+                        <ComboBox fx:id="add_gainComboBox" prefHeight="25.0" prefWidth="100.0">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+
                      </children></HBox>
                   <Label prefHeight="17.0" prefWidth="324.0" text="Category">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" top="10.0" />
+                        <Insets left="125.0" top="10.0" />
                      </VBox.margin>
-                     <padding>
-                        <Insets left="75.0" />
-                     </padding>
                   </Label>
-                  <ComboBox fx:id="CategoryComboBox" prefHeight="25.0" prefWidth="289.0">
+                  <HBox>
+                  <ComboBox fx:id="CategoryComboBox" prefHeight="25.0" prefWidth="200.0">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" />
+                        <Insets left="50.0" right="150.0" />
                      </VBox.margin>
+                        <HBox.margin>
+                           <Insets left="50.0" />
+                        </HBox.margin>
                   </ComboBox>
+                     <Button fx:id="addTransactionAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addTransaction" prefHeight="25.0" prefWidth="100.0" text="Add">
+                        <VBox.margin>
+                           <Insets bottom="15.0" left="205.0" right="15.0" top="10.0" />
+                        </VBox.margin>
+                        <HBox.margin>
+                           <Insets left="70.0" />
+                        </HBox.margin>
+                     </Button>
+                  </HBox>
                   <Label prefHeight="17.0" prefWidth="667.0" text="Date">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" top="10.0" />
+                        <Insets left="50.0" top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets left="87.0" />
                      </padding>
                   </Label>
-                  <DatePicker fx:id="addTransactionDate" prefHeight="25.0" prefWidth="571.0">
+                  <HBox>
+                  <DatePicker fx:id="addTransactionDate" prefHeight="25.0" prefWidth="200.0">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" />
+                        <Insets left="50.0" right="150.0" />
                      </VBox.margin>
+                        <HBox.margin>
+                           <Insets left="50.0" />
+                        </HBox.margin>
                   </DatePicker>
+                     <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="100.0" text="Clear">
+                        <VBox.margin>
+                           <Insets bottom="15.0" left="205.0" right="15.0" />
+                        </VBox.margin>
+                        <HBox.margin>
+                           <Insets left="70.0" />
+                        </HBox.margin>
+                     </Button>
+                  </HBox>
                   <Label prefHeight="17.0" prefWidth="508.0" text="Description">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" top="10.0" />
+                        <Insets left="50.0" right="150.0" top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets left="75.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="addTransactionDescription">
+                  <HBox>
+                  <TextField fx:id="addTransactionDescription" prefHeight="25.0" prefWidth="200.0">
                      <VBox.margin>
-                        <Insets left="150.0" right="150.0" />
+                        <Insets left="50.0" right="250.0" />
                      </VBox.margin>
+                        <HBox.margin>
+                           <Insets left="50.0" />
+                        </HBox.margin>
                   </TextField>
-                  <VBox prefHeight="57.0" prefWidth="500.0">
-                     <children>
-                        <Label fx:id="add_alert">
-                           <VBox.margin>
-                              <Insets bottom="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button fx:id="addTransactionAdd" onAction="#addTransaction" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Add">
-                           <VBox.margin>
-                              <Insets bottom="15.0" left="205.0" right="15.0" top="10.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" prefHeight="32.0" prefWidth="88.0" text="Clear">
-                           <VBox.margin>
-                              <Insets bottom="15.0" left="205.0" right="15.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
+                     <Label fx:id="add_alert">
+                        <VBox.margin>
+                           <Insets bottom="20.0" />
+                        </VBox.margin>
+                     </Label>
+                  </HBox>
                </children>
             </VBox>
          </children></VBox>
