@@ -4,6 +4,7 @@ import cz.vse.aplikace.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import org.json.simple.JSONArray;
@@ -22,9 +23,10 @@ public class AddController{
     public DatePicker addTransactionDate;
     public TextField addTransactionDescription;
     public Button addTransactionAdd;
+    public Button clearButton;
 
     public void initialize(){
-        addTransactionSum.setPromptText("Enter numbers only");
+        addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
@@ -55,10 +57,11 @@ public class AddController{
 
 
 
-    public void addTransaction(String email, double amount, Date date, String description){
+    public void addTransaction (String email, String amount, Date date, String description, Enum category){
         JSONObject transaction = new JSONObject();
         transaction.put(MainController.AMOUNT, amount);
         transaction.put(MainController.DATE, date);
+        transaction.put(MainController.CATEGORY,category);
         transaction.put(MainController.DESCRIPTION, description);
         transaction.put(MainController.ID, getRandomID().toString());
 
@@ -81,6 +84,12 @@ public class AddController{
 
 
 
-
+    public void clear(ActionEvent event) {
+        clearButton.setCursor(Cursor.HAND);
+        addTransactionSum.clear();
+        addTransactionDescription.clear();
+        addTransactionDate.setValue(null);
+        CategoryComboBox.setValue(null);
+    }
 }
 

@@ -16,6 +16,7 @@ import java.security.NoSuchAlgorithmException;
 public class MainController {
     public static final String AMOUNT = "amount";
     public static final String DATE = "date";
+    public static final String CATEGORY = "category";
     public static final String DESCRIPTION = "description";
     public static final String ID = "id";
 

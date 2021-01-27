@@ -60,11 +60,25 @@
                         <Insets left="90.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="addTransactionSum" prefHeight="25.0" prefWidth="421.0">
-                     <VBox.margin>
-                        <Insets left="150.0" right="150.0" />
-                     </VBox.margin>
-                  </TextField>
+                  <HBox prefHeight="205.0" prefWidth="500.0">
+                     <children>
+                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="269.0">
+                           <HBox.margin>
+                              <Insets left="150.0" right="140.0" />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                        <Label prefHeight="25.0" prefWidth="207.0" text="CZK">
+                           <HBox.margin>
+                              <Insets left="-130.0" />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                     </children></HBox>
                   <Label prefHeight="17.0" prefWidth="324.0" text="Category">
                      <VBox.margin>
                         <Insets left="150.0" right="150.0" top="10.0" />
@@ -109,6 +123,11 @@
                         <Button fx:id="addTransactionAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Add">
                            <VBox.margin>
                               <Insets bottom="15.0" left="205.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" prefHeight="32.0" prefWidth="88.0" text="Clear">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="205.0" right="15.0" />
                            </VBox.margin>
                         </Button>
                      </children>
