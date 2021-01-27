@@ -25,7 +25,6 @@ public class Start extends Application {
             e.printStackTrace();
         } catch (ParseException e) {
             JSON.saveData(new JSONArray());
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
