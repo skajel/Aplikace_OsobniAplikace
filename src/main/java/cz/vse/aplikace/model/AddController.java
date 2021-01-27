@@ -27,13 +27,17 @@ public class AddController {
     public Button addTransactionAdd;
     public Label register_alert;
     public double sum;
+    public Button clearButton;
 
-    public void initialize() {
-        addTransactionSum.setPromptText("Enter numbers only");
+    public void initialize(){
+        addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
         addTransactionDate.setPromptText("Choose date");
+        addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
+        clearButton.setTooltip(new Tooltip("Clear all boxes"));
+        CategoryComboBox.setTooltip(new Tooltip("Choose category"));
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -78,6 +82,8 @@ public class AddController {
         transaction.put(MainController.DATE, date.toString());
         transaction.put(MainController.DESCRIPTION, description);
         transaction.put(MainController.ID, getRandomID().toString());
+
+
         JSONArray userList = JSON.loadData();
         assert userList != null;
         userList.forEach(currentUser -> {
@@ -126,5 +132,15 @@ public class AddController {
         return UUID.randomUUID();
     }
 
+
+
+
+    public void clear(ActionEvent event) {
+        clearButton.setCursor(Cursor.HAND);
+        addTransactionSum.clear();
+        addTransactionDescription.clear();
+        addTransactionDate.setValue(null);
+        CategoryComboBox.setValue(null);
+    }
 }
 
