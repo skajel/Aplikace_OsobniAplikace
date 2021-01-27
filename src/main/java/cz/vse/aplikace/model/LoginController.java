@@ -16,7 +16,7 @@ public class LoginController {
     public TextField login_password;
     public Label login_alert;
     public Button sign_in;
-    public String currentUser;
+    public JSONObject currentUser;
 
 
 
@@ -48,17 +48,17 @@ public class LoginController {
             login_alert.setText("Email or password is invalid");
             return;
         }
-        setCurretUser(login_email.getText());
+
+        setCurretUser(user);
         Menu.loadTransaction();
 
 
     }
-    public  void setCurretUser(String args){
+    public  void setCurretUser(JSONObject args){
         currentUser = args;
-
     }
 
-    public String getCurrentUser(){
+    public JSONObject getCurrentUser(){
         return currentUser;
     }
 
