@@ -29,6 +29,8 @@ public class AddController {
     public double sum;
     public Button clearButton;
 
+
+
     public void initialize() {
         addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");

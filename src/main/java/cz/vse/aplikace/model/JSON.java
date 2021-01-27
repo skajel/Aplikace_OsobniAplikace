@@ -14,9 +14,9 @@ public class JSON {
     public static final String SAVE_FILE_NAME = "JSON.json";
 
     public static JSONArray loadData() {
-        JSONParser jsonParser = new JSONParser();
         try {
             FileReader reader = new FileReader(SAVE_FILE_NAME);
+            JSONParser jsonParser = new JSONParser();
             Object obj = jsonParser.parse(reader);
             JSONArray userList = (JSONArray) obj;
             reader.close();
