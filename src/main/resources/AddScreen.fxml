@@ -62,7 +62,7 @@
                   </Label>
                   <HBox prefHeight="205.0" prefWidth="500.0">
                      <children>
-                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="269.0">
+                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0">
                            <HBox.margin>
                               <Insets left="150.0" right="140.0" />
                            </HBox.margin>
@@ -72,7 +72,7 @@
                         </TextField>
                         <Label prefHeight="25.0" prefWidth="207.0" text="CZK">
                            <HBox.margin>
-                              <Insets left="-130.0" />
+                              <Insets left="-135.0" />
                            </HBox.margin>
                            <opaqueInsets>
                               <Insets />
