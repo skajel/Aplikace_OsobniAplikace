@@ -16,10 +16,10 @@ import java.util.UUID;
 
 public class AddController {
 
-    public Button overviewB;
-    public Button transactionB;
-    public Button addB;
-    public Button accountB;
+    public Button add_overview;
+    public Button add_transaction;
+    public Button add_add;
+    public Button add_account;
     public ComboBox<Category> CategoryComboBox;
     public TextField addTransactionSum;
     public DatePicker addTransactionDate;
@@ -112,21 +112,21 @@ public class AddController {
     }
 
     public void loadOverview() {
-        overviewB.setCursor(Cursor.HAND);
+        add_overview.setCursor(Cursor.HAND);
         Menu.loadOverview();
     }
 
     public void loadAccount() {
-        accountB.setCursor(Cursor.HAND);
+        add_account.setCursor(Cursor.HAND);
         Menu.loadAccount();
     }
 
     public void loadAdd() {
-        addB.setCursor(Cursor.CLOSED_HAND);
+        add_add.setCursor(Cursor.CLOSED_HAND);
     }
 
     public void loadTransaction() {
-        transactionB.setCursor(Cursor.HAND);
+        add_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();
     }
 
