@@ -38,7 +38,7 @@ public class AddController {
         addTransactionDate.setEditable(false);
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
-        add_gainComboBox.setPromptText("Gain or not");
+        add_gainComboBox.setPromptText("Gain or spending");
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
