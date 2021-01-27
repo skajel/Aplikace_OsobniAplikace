@@ -29,8 +29,8 @@ public class AddController {
     public double sum;
     public Button clearButton;
 
-    public void initialize(){
-        addTransactionSum.setPromptText("Enter numbers only                        ");
+    public void initialize() {
+        addTransactionSum.setPromptText("Enter numbers only");
         addTransactionDescription.setPromptText("Short description");
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
@@ -47,7 +47,6 @@ public class AddController {
             }
         });
     }
-
 
     private void addTransactionToJSON() throws NoSuchAlgorithmException {
         if (addTransactionSum.getText().isEmpty()) {
@@ -71,7 +70,8 @@ public class AddController {
         }
 
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
-        addTransaction("burm10@gmail.com", sum = Integer.parseInt(addTransactionSum.getText()), CategoryComboBox.toString(), addDate, addTransactionDescription.getText());
+        addTransaction("burm10@gmail.com", sum = Integer.parseInt(addTransactionSum.getText()),
+                CategoryComboBox.toString(), addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
 
@@ -83,18 +83,16 @@ public class AddController {
         transaction.put(MainController.DESCRIPTION, description);
         transaction.put(MainController.ID, getRandomID().toString());
 
-
         JSONArray userList = JSON.loadData();
         assert userList != null;
         userList.forEach(currentUser -> {
-            if (JSON.compareUserInfo((JSONObject) currentUser, email,MainController.EMAIL)) {
+            if (JSON.compareUserInfo((JSONObject) currentUser, email, MainController.EMAIL)) {
                 JSONArray trans = (JSONArray) ((JSONObject) currentUser).get(MainController.TRANSACTIONS);
                 trans.add(transaction);
             }
         });
         JSON.saveData(userList);
     }
-
 
     public void addTransaction(ActionEvent actionEvent) {
         addTransactionAdd.setCursor(Cursor.HAND);
@@ -131,9 +129,6 @@ public class AddController {
     public UUID getRandomID() {
         return UUID.randomUUID();
     }
-
-
-
 
     public void clear(ActionEvent event) {
         clearButton.setCursor(Cursor.HAND);
