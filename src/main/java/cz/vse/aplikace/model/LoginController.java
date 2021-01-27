@@ -15,7 +15,7 @@ public class LoginController {
     public TextField login_password;
     public Label login_alert;
     public Button sign_in;
-    public static JSONObject currentUser;
+
 
 
     public void signIn(MouseEvent mouseEvent) throws NoSuchAlgorithmException {
@@ -47,17 +47,9 @@ public class LoginController {
             return;
         }
 
-        setCurrentUser(user);
+        JSON.setCurrentUser(user);
         Menu.loadTransaction();
 
-
-    }
-    public static void setCurrentUser(JSONObject user){
-        currentUser = user;
-    }
-
-    public static JSONObject getCurrentUser(){
-        return currentUser;
     }
 
 

@@ -24,11 +24,11 @@ public class ChangeUsernameController {
     }
     public void saveUsername() {
         String newUsername = change_username.getText();
-        JSONObject currentUser = LoginController.getCurrentUser();
+        JSONObject currentUser = JSON.getCurrentUser();
         currentUser.replace(MainController.USERNAME, newUsername);
-        LoginController.setCurrentUser(currentUser);
+        JSON.setCurrentUser(currentUser);
         JSONArray userList = JSON.loadData();
-        JSONObject currentUserInJSON = JSON.findUser((String) LoginController.getCurrentUser().get(MainController.EMAIL));
+        JSONObject currentUserInJSON = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
         userList.remove(currentUserInJSON);
         userList.add(currentUser);
         JSON.saveData(userList);
@@ -42,7 +42,7 @@ public class ChangeUsernameController {
     }
 
     public String findUsername() {
-        String username = (String) LoginController.getCurrentUser().get(MainController.USERNAME);
+        String username = (String) JSON.getCurrentUser().get(MainController.USERNAME);
         return username;
     }
 }

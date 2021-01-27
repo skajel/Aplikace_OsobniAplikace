@@ -4,7 +4,6 @@ import cz.vse.aplikace.MainController;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -99,12 +98,12 @@ public class SettingsController {
      * @param event
      */
     public void setChangePicture(ActionEvent event) {
-        JSONObject currentUser = LoginController.getCurrentUser();
-        currentUser.replace(MainController.PICTURE, );
+        JSONObject currentUser = JSON.getCurrentUser();
+        currentUser.replace(MainController.PICTURE, "something");
 
-        LoginController.setCurrentUser(currentUser);
+        JSON.setCurrentUser(currentUser);
         JSONArray userList = JSON.loadData();
-        JSONObject currentUserInJSON = JSON.findUser((String) LoginController.getCurrentUser().get(MainController.EMAIL));
+        JSONObject currentUserInJSON = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
         userList.remove(currentUserInJSON);
         userList.add(currentUser);
         JSON.saveData(userList);
@@ -114,7 +113,6 @@ public class SettingsController {
      *
      */
     public void defaultPicture() {
-        profilePic.setImage(this.currentImage);
     }
 
     /**

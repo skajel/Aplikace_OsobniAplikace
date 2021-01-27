@@ -12,6 +12,14 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class JSON {
     public static final String SAVE_FILE_NAME = "JSON.json";
+    private static JSONObject currentUser;
+    public static void setCurrentUser(JSONObject user){
+        currentUser = user;
+    }
+
+    public static JSONObject getCurrentUser(){
+        return currentUser;
+    }
 
     public static JSONArray loadData() {
         try {
