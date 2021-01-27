@@ -135,6 +135,10 @@ public class SettingsController {
     public void setChangeTheme() {
 
     }
+    public void swapPicture(){Category.BUSINESS.toString();
+
+
+    }
 }
 
 
