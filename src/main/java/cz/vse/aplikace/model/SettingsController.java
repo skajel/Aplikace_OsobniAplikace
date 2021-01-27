@@ -25,42 +25,75 @@ public class SettingsController {
     public Image currentImage = image1;
 
 
+    /**
+     *
+     */
     public void initialize(){
         defaultPicture();
     }
+
+    /**
+     *
+     */
     public void loadOverview() {
         overview.setCursor(Cursor.HAND);
         Menu.loadOverview();
     }
 
+    /**
+     *
+     */
     public void loadAccount() {
         account.setCursor(Cursor.CLOSED_HAND);
     }
 
+    /**
+     *
+     */
     public void loadAdd() {
         add.setCursor(Cursor.HAND);
         Menu.loadAdd();
     }
 
+    /**
+     *
+     */
     public void loadTransaction() {
         transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();
     }
 
+    /**
+     *
+     */
     public void loadLogin() {
         logOut.setCursor(Cursor.HAND);
         Menu.loadLogin();
     }
-
+    /**
+     *
+     */
     public void loadChangeUsername(){
         changeUsername.setCursor(Cursor.HAND);
         Menu.loadChangeUsername();
     }
-
+    /**
+     *
+     */
     public void setChangeUsername(){
         loadChangeUsername();
     }
 
+    /**
+     *
+     */
+    public void setChangePicture() {
+        setChangePicture();
+    }
+
+    /**
+     * @param event
+     */
     public void setChangePicture(ActionEvent event) {
         if (this.profilePic.getImage() == this.image1) {
             this.currentImage = this.image2;
@@ -72,18 +105,32 @@ public class SettingsController {
         this.defaultPicture();
     }
 
+    /**
+     *
+     */
     public void defaultPicture() {
         profilePic.setImage(this.currentImage);
     }
 
+    /**
+     *
+     */
     public void setClearTransactions() {
         clearTransactions();
     }
 
+    /**
+     *
+     */
     public void clearTransactions() {
+
     }
 
-    public void setChangeTheme(ActionEvent event) {
+    /**
+     * @param
+     */
+    public void setChangeTheme() {
+
     }
 }
 

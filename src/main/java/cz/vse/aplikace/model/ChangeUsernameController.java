@@ -1,11 +1,12 @@
 package cz.vse.aplikace.model;
 
-import javafx.event.ActionEvent;
+
+import cz.vse.aplikace.MainController;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.json.simple.JSONArray;
+
 
 public class ChangeUsernameController {
 
@@ -15,20 +16,19 @@ public class ChangeUsernameController {
     public Label labelUsername;
 
     public void initialize(){
+        username.setPromptText("Enter new username");
         setLabelUsername();
     }
-
     public void saveUsername() {
         save.setCursor(Cursor.HAND);
         Menu.loadAccount();
     }
 
-    public String setLabelUsername(){
+    public void setLabelUsername() {
+        labelUsername.setText(findUsername());
+    }
 
-        JSONArray userList = JSON.loadData();
-
-        System.out.println(userList);
-
-        return null;
+    public String findUsername() {
+        return MainController.USERNAME;
     }
 }

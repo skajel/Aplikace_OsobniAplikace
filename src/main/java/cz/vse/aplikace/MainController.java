@@ -26,7 +26,6 @@ public class MainController {
     public static final String TRANSACTIONS = "transactions";
     public static final String PICTURE = "picture";
 
-
     public static Stage primaryStage;
     public static Scene scene;
     public Button account;
