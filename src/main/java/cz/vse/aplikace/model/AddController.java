@@ -51,6 +51,7 @@ public class AddController {
         });
     }
 
+
     private void addTransactionToJSON() throws NoSuchAlgorithmException {
         if (addTransactionSum.getText().isEmpty()) {
             add_alert.setText("Sum is mandatory");
@@ -71,10 +72,10 @@ public class AddController {
             add_alert.setText("Description is mandatory");
             return;
         }
-
+CategoryComboBox.getSelectionModel().getSelectedItem();
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
         addTransaction((String) LoginController.getCurrentUser().get(MainController.EMAIL), sum = Integer.parseInt(addTransactionSum.getText()),
-                CategoryComboBox.getSelectionModel().toString(), addDate, addTransactionDescription.getText());
+                (CategoryComboBox.getSelectionModel().getSelectedItem()).toString(), addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
 
