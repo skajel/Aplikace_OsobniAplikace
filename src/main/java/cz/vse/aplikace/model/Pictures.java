@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public enum Pictures {
-   // UNKNOWN(0,"unknown"),
     PICTURE1(1,"picture1"),
     PICTURE2(2,"picture2"),
     PICTURE3(3,"picture3");
