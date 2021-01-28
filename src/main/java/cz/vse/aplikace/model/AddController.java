@@ -4,6 +4,7 @@ import cz.vse.aplikace.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import org.json.simple.JSONArray;
@@ -199,5 +200,15 @@ public class AddController {
         addTransactionDate.setValue(null);
         CategoryComboBox.setValue(null);
     }
+
+    public void updateGainOrNot(ActionEvent actionEvent) {
+        if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING"){
+            CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
+            }else
+         {
+        CategoryComboBox.setItems(FXCollections.observableArrayList(Category.WAGE,Category.LOTTERY));
+        }
+    }
 }
+
 

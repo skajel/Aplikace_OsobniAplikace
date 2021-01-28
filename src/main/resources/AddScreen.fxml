@@ -76,7 +76,7 @@
                            </opaqueInsets>
                         </Label>
 
-                        <ComboBox fx:id="add_gainComboBox" prefHeight="25.0" prefWidth="100.0">
+                        <ComboBox fx:id="add_gainComboBox" prefHeight="25.0" prefWidth="100.0" onAction="#updateGainOrNot">
                            <VBox.margin>
                               <Insets left="5.0" />
                            </VBox.margin>

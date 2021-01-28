@@ -155,7 +155,7 @@ public class SettingsController {
         currentPicture = Pictures.getById(currentPictureId).getDescription();
         changePicture(currentPicture);
         supdatePicture(currentPicture);
-        System.out.println(currentPicture);
+        System.out.println(currentPicture+ "kurva proč nefunguju?");
 
     }
 }
