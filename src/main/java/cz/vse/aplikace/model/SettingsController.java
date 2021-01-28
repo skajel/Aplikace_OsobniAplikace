@@ -21,7 +21,6 @@ import org.json.simple.JSONObject;
  * @created leden 2021 pro ZS 2020/2021
  */
 
-import java.io.InputStream;
 
 public class SettingsController {
     public Button settings_account;
@@ -29,10 +28,7 @@ public class SettingsController {
     public Button settings_transaction;
     public Button settings_overview;
     public Button changeUsername;
-    public Button changePicture;
     public Button logOut;
-    public static String currentPicture;
-    public static int currentPictureId = 0;
     public static ImageView updatePicture1;
     public Label settings_username;
     public static BorderPane f;
@@ -42,7 +38,6 @@ public class SettingsController {
      *Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
      */
     public void initialize(){
-        defaultPicture();
         settings_username.setText(JSON.getCurrentUser().get(MainController.USERNAME).toString());
     }
 
@@ -92,10 +87,6 @@ public class SettingsController {
         Menu.loadChangeUsername();
     }
 
-    public void loadChangePicture(){
-        changeUsername.setCursor(Cursor.HAND);
-        Menu.loadChangePicture();
-    }
     /**
      *
      */
@@ -103,44 +94,6 @@ public class SettingsController {
         loadChangeUsername();
     }
 
-    /**
-     *
-     */
-    public static void changePicture(String newPicture) {
-        JSON.changeStateInUser(newPicture, MainController.PICTURE);
-    }
-
-    public void updatePicture(String picture){
-        InputStream Stream = getClass().getClassLoader().getResourceAsStream(picture);
-        assert Stream != null;
-        Image img = new Image(Stream);
-        updatePicture1.setImage(img);
-        updatePicture1.setFitWidth(10);
-        updatePicture1.setFitHeight(60);
-    }
-
-    /**
-     *
-     */
-    public void defaultPicture() {
-    }
-
-    /**
-     * Metoda, která upravuje Button - change picture, provede změnu obrázku aktuálního/přihlášeného uživatele
-     */
-    public void swapPicture(ActionEvent actionEvent) {
-        loadChangePicture();
-//        int pictureLenght = (Pictures.values().length);
-//        currentPictureId++;
-//        if(currentPictureId>pictureLenght){
-//            currentPictureId=1;
-//        }
-//        currentPicture = Pictures.getById(currentPictureId).getDescription();
-//        changePicture(currentPicture);
-//        updatePicture(currentPicture);
-//        System.out.println(currentPicture+ "kurva proč nefunguju?");
-
-    }
 }
 
 

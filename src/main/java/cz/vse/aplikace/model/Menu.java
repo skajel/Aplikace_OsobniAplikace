@@ -94,16 +94,6 @@ public class Menu {
             e.printStackTrace();
         }
     }
-
-    public static void loadChangePicture() {
-
-        InputStream stream = Menu.class.getClassLoader().getResourceAsStream("ChangePicture.fxml");
-        try {
-            MainController.changeScene(stream);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 
