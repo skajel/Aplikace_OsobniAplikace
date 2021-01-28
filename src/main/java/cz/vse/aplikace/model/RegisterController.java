@@ -20,6 +20,7 @@ public class RegisterController {
     public TextField register_email;
     public Button sign_up;
     public Label register_alert;
+    private final String basePicture = Pictures.getById(1).getDescription();
 
     public static final Pattern VALID_EMAIL_REGEX = Pattern.compile("^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
 
@@ -54,19 +55,19 @@ public class RegisterController {
             return;
         }
 
-        addUser(username.getText(), MainController.toHexString(MainController.getSHA(register_password.getText())), register_email.getText());
+        addUser(username.getText(), MainController.toHexString(MainController.getSHA(register_password.getText())), register_email.getText(),basePicture);
         Menu.loadTransaction();
 
 
 
     }
 
-    public static void addUser(String username, String password, String email) {
+    public static void addUser(String username, String password, String email, String basePicture) {
         JSONObject user = new JSONObject();
         user.put(MainController.USERNAME, username);
         user.put(MainController.PASSWORD, password);
         user.put(MainController.EMAIL, email);
-        user.put(MainController.PICTURE, "img1.jpg");
+        user.put(MainController.PICTURE, basePicture);
         user.put(MainController.TRANSACTIONS, new JSONArray());
         JSONArray userList = JSON.loadData();
         userList.add(user);

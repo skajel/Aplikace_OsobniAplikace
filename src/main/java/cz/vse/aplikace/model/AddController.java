@@ -38,13 +38,11 @@ public class AddController {
         addTransactionDate.setEditable(false);
         CategoryComboBox.setPromptText("Choose category");
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
-       // add_gainComboBox.setPromptText("Gain or not");
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
         clearButton.setTooltip(new Tooltip("Clear all boxes"));
         CategoryComboBox.setTooltip(new Tooltip("Choose category"));
-     //   add_gainComboBox.setTooltip(new Tooltip("Gain or not"));
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {

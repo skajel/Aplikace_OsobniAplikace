@@ -20,15 +20,8 @@ public class SettingsController {
     public Button changePicture;
     public Button changeTheme;
     public Button logOut;
-    public static int currentPictureId = 1;
     public static String currentPicture;
-
-/*
-    public Image image1 = new Image("img1.jpg");
-    public Image image2 = new Image("img2.jpg");
-    public Image image3 = new Image("img3.jpg");
-    public Image currentImage = image1;
-*/
+    public static int currentPictureId = 0;
 
     /**
      *
@@ -137,6 +130,7 @@ public class SettingsController {
     public void setChangeTheme() {
 
     }
+
     public static void swapPicture(){
 
         int pictureLenght = (Pictures.values().length);
@@ -144,10 +138,8 @@ public class SettingsController {
         if(currentPictureId>pictureLenght){
             currentPictureId=1;
         }
-
         currentPicture = Pictures.getById(currentPictureId).getDescription();
         System.out.println(currentPicture);
-
     }
 }
 
