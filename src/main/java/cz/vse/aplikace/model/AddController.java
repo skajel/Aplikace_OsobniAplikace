@@ -222,6 +222,7 @@ public class AddController {
         addTransactionSum.clear();
         addTransactionDescription.clear();
         addTransactionDate.setValue(null);
+        add_gainComboBox.setValue(null);
         CategoryComboBox_GAIN.setValue(null);
         CategoryComboBox_SPENDING.setValue(null);
     }
