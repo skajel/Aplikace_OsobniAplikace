@@ -28,10 +28,12 @@ public class OverviewController {
 
     public void initialize() {
         toGainOrSpanding();
+        total_gain.setEditable(false);
+        total_spending.setEditable(false);
+        current_balance.setEditable(false);
 
     }
         public void toGainOrSpanding(){
-
             JSONObject user = JSON.getCurrentUser();
             JSONArray transactions  = (JSONArray) user.get(MainController.TRANSACTIONS);
             transactions.forEach(transaction -> {

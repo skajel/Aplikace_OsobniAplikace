@@ -1,0 +1,22 @@
+*{
+    -fx-background-color: #353535;
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-focus-traversable: false;
+    -fx-background-color: #0A9951;
+    -fx-text-fill: white;
+}
+
+.hyperlink{
+    -fx-text-fill: #0A9951;
+}
+
+.text-field{
+    -fx-padding: 1px;
+    -fx-background-color: #0A9951;
+    -fx-text-fill: white;
+}
+
+
