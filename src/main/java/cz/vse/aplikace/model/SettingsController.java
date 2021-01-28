@@ -4,6 +4,7 @@ import cz.vse.aplikace.MainController;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,13 +19,13 @@ import org.json.simple.JSONObject;
  * @created leden 2021 pro ZS 2020/2021
  */
 
+import java.io.InputStream;
+
 public class SettingsController {
     public Button settings_account;
     public Button setting_add;
     public Button settings_transaction;
     public Button settings_overview;
-    public ImageView profilePic;
-
     public Button changeUsername;
     public Button clearTransactions;
     public Button changePicture;
@@ -32,6 +33,7 @@ public class SettingsController {
     public Button logOut;
     public static String currentPicture;
     public static int currentPictureId = 0;
+    public static ImageView updatePicture;
 
     /**
      *
@@ -99,22 +101,18 @@ public class SettingsController {
 
         JSON.changeStateInUser(newPicture, MainController.PICTURE);
 
-
     }
 
-    /**
-     * @param event
-     */
-    public void setChangePicture(ActionEvent event) {
-        JSONObject currentUser = JSON.getCurrentUser();
-        currentUser.replace(MainController.PICTURE, "something");
+    public void supdatePicture(String picture){
 
-        JSON.setCurrentUser(currentUser);
-        JSONArray userList = JSON.loadData();
-        JSONObject currentUserInJSON = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
-        userList.remove(currentUserInJSON);
-        userList.add(currentUser);
-        JSON.saveData(userList);
+        InputStream Stream = getClass().getClassLoader().getResourceAsStream(picture);
+        assert Stream != null;
+        Image img = new Image(Stream);
+        updatePicture.setImage(img);
+        updatePicture.setFitWidth(60);
+        updatePicture.setFitHeight(60);
+
+
     }
 
     /**
@@ -153,7 +151,9 @@ public class SettingsController {
         }
         currentPicture = Pictures.getById(currentPictureId).getDescription();
         changePicture(currentPicture);
+        supdatePicture(currentPicture);
         System.out.println(currentPicture);
+
     }
 }
 
