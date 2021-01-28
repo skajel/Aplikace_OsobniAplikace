@@ -4,6 +4,7 @@ import cz.vse.aplikace.MainController;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.json.simple.JSONArray;
@@ -34,6 +35,7 @@ public class SettingsController {
     public static String currentPicture;
     public static int currentPictureId = 0;
     public static ImageView updatePicture1;
+    public Label settings_username;
 
 
     /**
@@ -41,6 +43,7 @@ public class SettingsController {
      */
     public void initialize(){
         defaultPicture();
+        settings_username.setText(JSON.getCurrentUser().get(MainController.USERNAME).toString());
     }
 
     /**
@@ -99,14 +102,10 @@ public class SettingsController {
      *
      */
     public static void changePicture(String newPicture) {
-
         JSON.changeStateInUser(newPicture, MainController.PICTURE);
-
     }
 
     public void updatePicture(String picture){
-
-
         InputStream Stream = getClass().getClassLoader().getResourceAsStream(picture);
         assert Stream != null;
         Image img = new Image(Stream);

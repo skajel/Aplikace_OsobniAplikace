@@ -1,6 +1,8 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.chart.PieChart;
@@ -34,10 +36,8 @@ public class OverviewController {
         total_spending.setEditable(false);
         current_balance.setEditable(false);
 
-        System.out.println(gain + "1");
         resetTextAreas();
         toGainOrSpanding();
-        System.out.println(gain + "1");
 
         total_gain.setText(String.valueOf(gain));
         total_spending.setText((String.valueOf(spending)));
@@ -50,10 +50,8 @@ public class OverviewController {
     public void updateOverview(ActionEvent actionEvent) {
         overview_account.setCursor(Cursor.HAND);
 
-        System.out.println(gain);
         resetTextAreas();
         toGainOrSpanding();
-        System.out.println(gain);
 
         total_gain.setText(String.valueOf(gain));
         total_spending.setText((String.valueOf(spending)));
@@ -65,14 +63,12 @@ public class OverviewController {
     public void resetTextAreas(){
         gain = 0;
         spending = 0;
-
     }
 
     /**
      * Metoda, která slouží ke sečtení výdajů a příjmů přihlášeného uživatele
      */
         public void toGainOrSpanding(){
-
             JSONObject user = JSON.getCurrentUser();
             JSONArray transactions  = (JSONArray) user.get(MainController.TRANSACTIONS);
             transactions.forEach(transaction -> {
@@ -84,7 +80,16 @@ public class OverviewController {
                 }
 
             });
+            makeGraph();
         }
+
+    private void makeGraph() {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("gain", gain),
+                        new PieChart.Data("spending", spending));
+        chart = new PieChart(pieChartData);
+    }
 
     /**
      * Metoda, která odečte výdaje od příjmů

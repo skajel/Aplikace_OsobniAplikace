@@ -58,7 +58,7 @@
                                         <Insets bottom="5.0" top="20.0" />
                                     </VBox.margin>
                                 </Label>
-                                <ComboBox prefHeight="30.0" prefWidth="130.0">
+                                <ComboBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="130.0">
                                     <VBox.margin>
                                         <Insets />
                                     </VBox.margin>
@@ -69,9 +69,9 @@
                                 <Insets right="50.0" />
                             </HBox.margin>
                         </VBox>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="130.0" text="change view" textAlignment="CENTER">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="change view" textAlignment="CENTER">
                             <HBox.margin>
-                                <Insets top="45.0" />
+                                <Insets top="41.0" />
                             </HBox.margin>
                         </Button>
                     </children>
