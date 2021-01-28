@@ -7,6 +7,16 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+/**
+ * Třída cz.vse.aplikace.model.SettingsController je součástí aplikace pro vedení přehledu výdajů a příjmů.
+ * <p>
+ *
+ * Tato třída slouží jako controller pro SettingsScreen.fxml - která slouží k nastavení uživatelského účtu
+ *
+ * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
+ * @version 1.0 GUI
+ * @created leden 2021 pro ZS 2020/2021
+ */
 
 public class SettingsController {
     public Button settings_account;

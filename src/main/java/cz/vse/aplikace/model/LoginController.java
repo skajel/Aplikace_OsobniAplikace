@@ -9,6 +9,17 @@ import javafx.scene.input.MouseEvent;
 import org.json.simple.JSONObject;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Třída cz.vse.aplikace.model.LoginController je součástí aplikace pro vedení přehledu výdajů a příjmů.
+ * <p>
+ *
+ * Tato třída slouží k přihlášení existujícího uživatele do aplikace.
+ *
+ * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
+ * @version 1.0 GUI
+ * @created leden 2021 pro ZS 2020/2021
+ */
+
 
 public class LoginController {
     public TextField login_email;
@@ -17,13 +28,18 @@ public class LoginController {
     public Button sign_in;
 
 
-
+    /**
+     * Metoda, která upravuje Button - Sign in a vyvolává metodu checkUser
+     */
     public void signIn(MouseEvent mouseEvent) throws NoSuchAlgorithmException {
         login_alert.setText("");
         sign_in.setCursor(Cursor.HAND);
         checkUser();
     }
 
+    /**
+     * Metoda, která slouží k ověření přihlašovácího emailu a hesla s údaji v JSON.json, společně s podmínky pro vstupní hodnoty
+     */
     private void checkUser() throws NoSuchAlgorithmException {
         if(login_email.getText().isEmpty()){
             login_alert.setText("You have to fill in the email.");
@@ -53,10 +69,16 @@ public class LoginController {
     }
 
 
+    /**
+     * Metoda, HASHuje heslo
+     */
     private String hashPassword() throws NoSuchAlgorithmException {
           return MainController.toHexString(MainController.getSHA(login_password.getText()));
     }
 
+    /**
+     *Metoda, která upravuje HyperLink a mění scénu na RegisterScreen.fxml
+     */
     public void toRegisterScreen(MouseEvent mouseEvent) {
         Menu.loadRegister();
     }

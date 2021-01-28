@@ -9,6 +9,17 @@ import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+/**
+ * Třída cz.vse.aplikace.model.OverviewController je součástí aplikace pro vedení přehledu výdajů a příjmů.
+ * <p>
+ *
+ * Tato třída slouží jako controller pro OverviewScreen.fxml - která slouží k celkovému přehledu transakcí a aktuální bilanci účtu
+ *
+ * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
+ * @version 1.0 GUI
+ * @created leden 2021 pro ZS 2020/2021
+ */
+
 public class OverviewController {
 
     public Button overview_overview;
@@ -25,12 +36,18 @@ public class OverviewController {
     private static double spending;
 
 
+    /**
+     * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
+     */
     public void initialize() {
         toGainOrSpanding();
 
     }
 
 
+    /**
+     * Metoda, která vyhledá b transakcích příjmy a výdaje a následně je sečtě do jedné hodnoty - výdaj/příjem
+     */
         public static void toGainOrSpanding(){
 
             JSONObject user = JSON.getCurrentUser();
@@ -48,19 +65,33 @@ public class OverviewController {
             current_balance.setText((String.valueOf(Balance(gain, spending))));
         }
 
+    /**
+     * Metoda, která odčítá výdaje od příjmů
+     */
         public static double Balance(double gain, double spending){
             return gain-spending;
         }
 
-
+    /**
+     * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
+     */
     public void loadOverview() {
         overview_overview.setCursor(Cursor.CLOSED_HAND);}
+    /**
+     * Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
+     */
     public void loadAccount(){
         overview_account.setCursor(Cursor.HAND);
         Menu.loadAccount();}
+    /**
+     * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
+     */
     public void loadAdd(){
         overview_add.setCursor(Cursor.HAND);
         Menu.loadAdd(); }
+    /**
+     * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
+     */
     public void loadTransaction(){
         overview_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();}

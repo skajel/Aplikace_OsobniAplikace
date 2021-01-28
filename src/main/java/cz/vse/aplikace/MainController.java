@@ -13,6 +13,18 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Třída cz.vse.aplikace.MainController je součástí aplikace pro vedení přehledu výdajů a příjmů.
+ * <p>
+ *
+ * Tato třída slouží jako hlavní controller celé aplikace  .
+ *
+ * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
+ * @version 1.0 GUI
+ * @created leden 2021 pro ZS 2020/2021
+ */
+
+
 public class MainController {
     public static final String AMOUNT = "amount";
     public static final String GAINOTNOT = "gainornot";
@@ -29,6 +41,9 @@ public class MainController {
     public static Stage primaryStage;
     public static Scene scene;
 
+    /**
+     * Metoda, která otevírá a upravuje okno primary stage
+     */
     public static void makeWindow(InputStream str) throws IOException{
         primaryStage = new Stage();
         primaryStage.setResizable(false);
@@ -41,6 +56,9 @@ public class MainController {
         primaryStage.show();
     }
 
+    /**
+     * Metoda, která slouží ke změně scény na primary stage
+     */
     public static void changeScene(InputStream str) throws Exception{
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(str);
