@@ -1,51 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.cell.*?>
-<?import javafx.collections.*?>
-<?import cz.vse.aplikace.model.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import cz.vse.aplikace.model.TransactionTable?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.TransactionController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.TransactionController">
     <left>
         <VBox>
             <children>
-                <Button fx:id="transaction_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0"
-                        prefWidth="80.0" text="Account">
+                <Button fx:id="transaction_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="80.0" text="Account">
                     <VBox.margin>
-                        <Insets left="10.0" top="20.0"/>
+                        <Insets left="10.0" top="20.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="transaction_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0"
-                        prefWidth="80.0" text="Add">
+                <Button fx:id="transaction_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="80.0" text="Add">
                     <VBox.margin>
-                        <Insets left="10.0" top="20.0"/>
+                        <Insets left="10.0" top="20.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="transaction_transaction" mnemonicParsing="false" onAction="#loadTransaction"
-                        prefHeight="40.0" prefWidth="80.0" text="Transaction">
+                <Button fx:id="transaction_transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="80.0" text="Transaction">
                     <VBox.margin>
-                        <Insets left="10.0" top="20.0"/>
+                        <Insets left="10.0" top="20.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="transaction_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0"
-                        prefWidth="80.0" text="Overview">
+                <Button fx:id="transaction_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="80.0" text="Overview">
                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" top="20.0"/>
+                        <Insets bottom="20.0" left="10.0" top="20.0" />
                     </VBox.margin>
                 </Button>
                 <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@logo.png"/>
+                        <Image url="@logo.png" />
                     </image>
                     <VBox.margin>
-                        <Insets bottom="20.0" top="20.0"/>
+                        <Insets bottom="20.0" top="20.0" />
                     </VBox.margin>
                 </ImageView>
             </children>
@@ -58,26 +49,25 @@
                     <children>
                         <VBox alignment="TOP_CENTER">
                             <children>
-                                <Label text="Transaction type" textAlignment="CENTER">
+                                <Label text="Transaction category" textAlignment="CENTER">
                                     <VBox.margin>
-                                        <Insets bottom="10.0" top="20.0"/>
+                                        <Insets bottom="10.0" top="20.0" />
                                     </VBox.margin>
                                 </Label>
-                                <ChoiceBox prefHeight="30.0" prefWidth="130.0">
+                                <ComboBox prefHeight="30.0" prefWidth="130.0">
                                     <VBox.margin>
-                                        <Insets/>
+                                        <Insets />
                                     </VBox.margin>
-                                </ChoiceBox>
+                                </ComboBox>
 
                             </children>
                             <HBox.margin>
-                                <Insets right="50.0"/>
+                                <Insets right="50.0" />
                             </HBox.margin>
                         </VBox>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="130.0"
-                                text="Change&#10;view" textAlignment="CENTER">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="130.0" text="Change&#10;view" textAlignment="CENTER">
                             <HBox.margin>
-                                <Insets top="50.0"/>
+                                <Insets top="50.0" />
                             </HBox.margin>
                         </Button>
                     </children>
@@ -86,22 +76,22 @@
                     <columns>
                         <TableColumn prefWidth="89.0" text="Amount">
                             <cellValueFactory>
-                                <PropertyValueFactory property="table_amount"/>
+                                <PropertyValueFactory property="table_amount" />
                             </cellValueFactory>
                         </TableColumn>
                         <TableColumn prefWidth="108.0" text="Category">
                             <cellValueFactory>
-                                <PropertyValueFactory property="table_category"/>
+                                <PropertyValueFactory property="table_category" />
                             </cellValueFactory>
                         </TableColumn>
                         <TableColumn prefWidth="100.0" text="Date">
                             <cellValueFactory>
-                                <PropertyValueFactory property="table_date"/>
+                                <PropertyValueFactory property="table_date" />
                             </cellValueFactory>
                         </TableColumn>
                         <TableColumn prefWidth="182.0" text="Description">
                             <cellValueFactory>
-                                <PropertyValueFactory property="table_description"/>
+                                <PropertyValueFactory property="table_description" />
                             </cellValueFactory>
                         </TableColumn>
                     </columns>
@@ -117,7 +107,7 @@
                         </FXCollections>
                     </items>
                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0"/>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
                     </VBox.margin>
                 </TableView>
             </children>
