@@ -2,16 +2,13 @@ package cz.vse.aplikace.main;
 
 
 import cz.vse.aplikace.MainController;
-import cz.vse.aplikace.model.Category;
 import cz.vse.aplikace.model.JSON;
-import cz.vse.aplikace.model.SettingsController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,15 +35,13 @@ public class Start extends Application {
             jsonParser.parse(reader);
             reader.close();
 
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             JSON.saveData(new JSONArray());
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
-            launch();
+        launch();
 
     }
 

@@ -4,7 +4,6 @@ import cz.vse.aplikace.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import org.json.simple.JSONArray;
@@ -59,7 +58,7 @@ public class AddController {
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             /**
              * Metoda, která neumožní vložení jiných znaků než cifer do textfieldu
-             * @Override přepije Value textfieldu
+             * @Override přepíšee Value textfieldu
              */
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -134,7 +133,7 @@ public class AddController {
     /**
      * Metoda, která upravuje Button - add a vyvolává metodu executeAdd
      */
-    public void addTransaction(ActionEvent actionEvent) {
+    public void addTransaction() {
         addTransactionAdd.setCursor(Cursor.HAND);
         add_alert.setText("");
         executeAdd();
@@ -193,7 +192,7 @@ public class AddController {
     /**
      * Metoda, která upravuje Button - Clear, vymaže vložené hodnoty v ComboBoxu a TextFieldu
      */
-    public void clear(ActionEvent event) {
+    public void clear() {
         clearButton.setCursor(Cursor.HAND);
         addTransactionSum.clear();
         addTransactionDescription.clear();

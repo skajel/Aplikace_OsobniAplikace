@@ -50,11 +50,7 @@ public class JSON {
             JSONArray userList = (JSONArray) obj;
             reader.close();
             return userList;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
         return null;
@@ -78,10 +74,7 @@ public class JSON {
      */
     public static boolean compareUserInfo(JSONObject user, String defaultTerm, String type){
         String searchedTerm = (String) user.get(type);
-        if (defaultTerm.equals(searchedTerm)){
-            return true;
-        }
-        return false;
+        return defaultTerm.equals(searchedTerm);
     }
 
     /**

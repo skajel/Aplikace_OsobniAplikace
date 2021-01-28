@@ -5,7 +5,6 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import org.json.simple.JSONObject;
 import java.security.NoSuchAlgorithmException;
 
@@ -31,7 +30,7 @@ public class LoginController {
     /**
      * Metoda, která upravuje Button - Sign in a vyvolává metodu checkUser
      */
-    public void signIn(MouseEvent mouseEvent) throws NoSuchAlgorithmException {
+    public void signIn() throws NoSuchAlgorithmException {
         login_alert.setText("");
         sign_in.setCursor(Cursor.HAND);
         checkUser();
@@ -79,7 +78,7 @@ public class LoginController {
     /**
      *Metoda, která upravuje HyperLink a mění scénu na RegisterScreen.fxml
      */
-    public void toRegisterScreen(MouseEvent mouseEvent) {
+    public void toRegisterScreen() {
         Menu.loadRegister();
     }
 }
