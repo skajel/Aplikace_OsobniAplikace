@@ -11,6 +11,16 @@ import org.json.simple.JSONObject;
 import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+/**
+ * Třída cz.vse.aplikace.model.RegisterController je součástí aplikace pro vedení přehledu výdajů a příjmů.
+ * <p>
+ *
+ * Tato třída slouží k registraci uživatele do aplikace a vložení údajů do JSON.json
+ *
+ * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
+ * @version 1.0 GUI
+ * @created leden 2021 pro ZS 2020/2021
+ */
 
 public class RegisterController {
 
@@ -22,7 +32,9 @@ public class RegisterController {
     public Label register_alert;
 
     public static final Pattern VALID_EMAIL_REGEX = Pattern.compile("^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
-
+    /**
+     * Metoda, která vloží parametry uživatele do JSON.json a upravuje podmínky pro jednotlivé vstupní parametry
+     */
     private void addUserToJSON() throws NoSuchAlgorithmException {
         if(register_password.getText().isEmpty()){
             register_alert.setText("Password is mandatory");
@@ -60,6 +72,9 @@ public class RegisterController {
 
 
     }
+    /**
+     * Metoda, která vytváří uživatele a vytvoří jeho array
+     */
 
     public static void addUser(String username, String password, String email) {
         JSONObject user = new JSONObject();
@@ -74,13 +89,17 @@ public class RegisterController {
         JSON.setCurrentUser(user);
 
     }
-
+    /**
+     * Metoda, která upravuje Button - submit, vyvolá metodu executeSubmit
+     */
     public void submit(MouseEvent mouseEvent) {
         register_alert.setText("");
         sign_up.setCursor(Cursor.HAND);
         executeSubmit();
     }
-
+    /**
+     * Metoda, která provede samotný zápis uživatele, vyvoláním metody addUserToJSON
+     */
     public void executeSubmit(){
         try {
             addUserToJSON();
@@ -88,7 +107,9 @@ public class RegisterController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Metoda, která upravuje Hyperlink a mění scénu na LoginScreen.fxml
+     */
     public void toLoginScreen(MouseEvent mouseEvent) {
         Menu.loadLogin();
     }
