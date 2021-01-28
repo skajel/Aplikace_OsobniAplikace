@@ -13,10 +13,11 @@ import org.json.simple.JSONObject;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.UUID;
+
 /**
  * Třída cz.vse.aplikace.model.AddController je součástí aplikace pro vedení přehledu výdajů a příjmů.
  * <p>
- *
+ * <p>
  * Tato třída slouží jako controller pro AddScreen.fxml - která slouží k přidání transakce do JSON.json
  *
  * @author Martin Bureš, Ondra Šesták, Ondra Štěpán, Lukáš Fiala, Jan Andrášek
@@ -35,6 +36,7 @@ public class AddController {
     public Button addTransactionAdd;
     public ComboBox<GainOrNot> add_gainComboBox;
     public ComboBox<Category> CategoryComboBox_GAIN;
+    public ComboBox<Category> CategoryComboBox_SPENDING;
 
     public TextField addTransactionSum;
     public DatePicker addTransactionDate;
@@ -42,7 +44,7 @@ public class AddController {
 
     public Label add_alert;
     public double sum;
-
+    public static String kategorie;
 
 
     /**
@@ -52,13 +54,26 @@ public class AddController {
         addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");
         addTransactionDate.setEditable(false);
+
+        CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.RENT, Category.ENTERTAINMENT, Category.BUSINESS, Category.SPORT, Category.GROCERIES, Category.CHILDREN, Category.OTHER, Category.CHILDREN));
+        CategoryComboBox_SPENDING.setItems(FXCollections.observableArrayList(Category.WAGE, Category.LOTTERY));
+
+
         CategoryComboBox_GAIN.setPromptText("Choose category");
-        CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.values()));
+        CategoryComboBox_SPENDING.setPromptText("Choose category");
+
+        CategoryComboBox_GAIN.setTooltip(new Tooltip("Choose category"));
+        CategoryComboBox_SPENDING.setTooltip(new Tooltip("Choose category"));
+
+        CategoryComboBox_GAIN.setVisible(false);
+        CategoryComboBox_SPENDING.setVisible(false);
+
+
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
         clearButton.setTooltip(new Tooltip("Clear all boxes"));
-        CategoryComboBox_GAIN.setTooltip(new Tooltip("Choose category"));
+
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             /**
              * Metoda, která neumožní vložení jiných znaků než cifer do textfieldu
@@ -83,9 +98,9 @@ public class AddController {
             return;
         }
 
-        if (CategoryComboBox_GAIN.getSelectionModel().isEmpty()) {
-            add_alert.setText("Category is mandatory");
-            return;
+        if ((CategoryComboBox_SPENDING.getSelectionModel().isEmpty())&&(CategoryComboBox_GAIN.getSelectionModel().isEmpty())) {
+           add_alert.setText("Category is mandatory");
+           return;
         }
 
         if (add_gainComboBox.getSelectionModel().isEmpty()) {
@@ -102,11 +117,17 @@ public class AddController {
             add_alert.setText("Description is mandatory");
             return;
         }
+        if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING") {
+            kategorie = (CategoryComboBox_GAIN.getSelectionModel().getSelectedItem()).toString();
+        } else {
+            kategorie = (CategoryComboBox_SPENDING.getSelectionModel().getSelectedItem()).toString();
+        }
+
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
         addTransaction((String) JSON.getCurrentUser().get(MainController.EMAIL),
                 sum = Integer.parseInt(addTransactionSum.getText()),
                 (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
-                (CategoryComboBox_GAIN.getSelectionModel().getSelectedItem()).toString(),
+                kategorie,
                 addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
@@ -114,10 +135,10 @@ public class AddController {
     /**
      * Metoda, která vytváří proměnné v transaction a přiřadí je k aktuálnímu/přihlášenému uživateli
      */
-    public void addTransaction(String email, double amount,String gainOrNot, String category, Date date, String description) {
+    public void addTransaction(String email, double amount, String gainOrNot, String category, Date date, String description) {
         JSONObject transaction = new JSONObject();
         transaction.put(MainController.AMOUNT, amount);
-        transaction.put(MainController.GAINOTNOT,gainOrNot);
+        transaction.put(MainController.GAINOTNOT, gainOrNot);
         transaction.put(MainController.CATEGORY, category);
         transaction.put(MainController.DATE, date.toString());
         transaction.put(MainController.DESCRIPTION, description);
@@ -202,13 +223,16 @@ public class AddController {
         addTransactionDescription.clear();
         addTransactionDate.setValue(null);
         CategoryComboBox_GAIN.setValue(null);
+        CategoryComboBox_SPENDING.setValue(null);
     }
 
     public void updateGainOrNot(ActionEvent actionEvent) {
-        if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING"){
-            CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.RENT,Category.ENTERTAINMENT,Category.BUSINESS,Category.SPORT,Category.GROCERIES,Category.CHILDREN,Category.OTHER,Category.CHILDREN));
-            }else {
-            CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.WAGE,Category.LOTTERY));
+        if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING") {
+            CategoryComboBox_SPENDING.setVisible(false);
+            CategoryComboBox_GAIN.setVisible(true);
+        } else {
+            CategoryComboBox_SPENDING.setVisible(true);
+            CategoryComboBox_GAIN.setVisible(false);
         }
     }
 }
