@@ -14,13 +14,11 @@ public class ChangeUsernameController {
     public Label change_labelUsername;
 
     public void initialize(){
-        change_save.setCursor(Cursor.HAND);
-        change_username.setPromptText("Enter new username");
         setLabelUsername();
     }
     public void saveUsername() {
         String newUsername = change_username.getText();
-        JSON.changeStateInUser(newUsername);
+        JSON.changeStateInUser(newUsername, MainController.USERNAME);
         Menu.loadAccount();
     }
 
@@ -29,7 +27,6 @@ public class ChangeUsernameController {
     }
 
     public String findUsername() {
-        String username = (String) JSON.getCurrentUser().get(MainController.USERNAME);
-        return username;
+        return JSON.getCurrentUser().get(MainController.USERNAME).toString();
     }
 }
