@@ -13,7 +13,11 @@
     -fx-text-fill: #0A9951;
 }
 
-.text-field, .text-area{
+.label{
+    -fx-font-size: 14px;
+}
+
+.text-field, .text-area, .combo-box, .table-view{
     -fx-padding: 1px;
     -fx-background-color: #0A9951;
     -fx-text-fill: white;
@@ -39,4 +43,7 @@
     -fx-text-fill: black;
     -fx-background-color: #bbbcbf;
 }
+
+
+
 
