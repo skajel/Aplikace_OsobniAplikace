@@ -16,19 +16,7 @@ import java.util.HashMap;
 
 
 public enum Category {
-//    RENT,
-//    ENTERTAINMENT,
-//    BUSINESS,
-//    SPORT,
-//    GROCERIES,
-//    CHILDREN,
-//    OTHER,
-//    ONLINE,
-//    WAGE,
-//    LOTTERY,
-
-
-    RENT(1,"SPENDING3"),
+    RENT(1,"SPENDING"),
     ENTERTAINMENT(2,"SPENDING"),
     BUSINESS(3,"SPENDING"),
     SPORT(4,"SPENDING"),

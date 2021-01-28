@@ -22,8 +22,8 @@ public class OverviewController {
     public TextArea total_spending;
     public TextArea current_balance;
 
-    private static double gain;
-    private static double spending;
+    private double gain;
+    private double spending;
 
 
     /**

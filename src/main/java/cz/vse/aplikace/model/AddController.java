@@ -203,9 +203,8 @@ public class AddController {
 
     public void updateGainOrNot(ActionEvent actionEvent) {
         if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING"){
-            CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
-            }else
-         {
+            CategoryComboBox.setItems(FXCollections.observableArrayList(Category.RENT,Category.ENTERTAINMENT,Category.BUSINESS,Category.SPORT,Category.GROCERIES,Category.CHILDREN,Category.OTHER,Category.CHILDREN));
+            }else {
         CategoryComboBox.setItems(FXCollections.observableArrayList(Category.WAGE,Category.LOTTERY));
         }
     }
