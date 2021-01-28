@@ -65,12 +65,12 @@
                   </Label>
                   <HBox>
                      <children>
-                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0">
+                        <TextField fx:id="addTransactionSum" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </TextField>
-                        <Label prefHeight="25.0" prefWidth="50" text="CZK">
+                        <Label prefHeight="30.0" prefWidth="50" text="CZK">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -80,29 +80,39 @@
                         </Label>
                      </children>
                      <VBox.margin>
-                        <Insets left="30.0" right="30.0" />
+                        <Insets bottom="10.0" left="30.0" right="30.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label prefWidth="200.0" text="date">
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="20.0" />
-                     </VBox.margin>
-                  </Label>
-               <DatePicker fx:id="addTransactionDate" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0">
-                  <VBox.margin>
-                     <Insets left="30.0" right="30.0" />
-                  </VBox.margin>
-               </DatePicker>
                   <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" text="description">
                      <VBox.margin>
-                        <Insets bottom="5.0" top="20.0" />
+                        <Insets bottom="5.0" />
                               </VBox.margin>
                   </Label>
-               <TextField fx:id="addTransactionDescription" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0">
+               <TextField fx:id="addTransactionDescription" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
                      <VBox.margin>
-                        <Insets left="30.0" right="30.0" />
+                        <Insets bottom="10.0" left="30.0" right="30.0" />
                      </VBox.margin></TextField>
-                  <Label text=" " fx:id="add_alert">
+                  <VBox fx:id="dateContent" alignment="CENTER">
+                     <children>
+                        <Label prefWidth="200.0" text="date">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     <DatePicker fx:id="addTransactionDate" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                        <VBox.margin>
+                           <Insets left="30.0" right="30.0" />
+                        </VBox.margin>
+                     </DatePicker>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <Label fx:id="add_alert" text=" ">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -136,11 +146,11 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-               <ComboBox fx:id="add_gainComboBox" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefWidth="120.0">
+               <ComboBox fx:id="add_gainComboBox" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefHeight="30.0" prefWidth="120.0">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin></ComboBox>
-                  <Label disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" text="category">
+                  <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" text="category">
                      <VBox.margin>
                         <Insets bottom="5.0" top="20.0" />
                      </VBox.margin>
@@ -149,7 +159,7 @@
                      <children>
       
                                     <ComboBox fx:id="CategoryComboBox_SPENDING" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" />
-                        <ComboBox fx:id="CategoryComboBox_GAIN" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" />
+                        <ComboBox fx:id="CategoryComboBox_GAIN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" />
                      </children>
                   </StackPane>
                </children>

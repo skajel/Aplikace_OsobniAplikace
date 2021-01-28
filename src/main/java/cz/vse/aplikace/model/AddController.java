@@ -51,28 +51,28 @@ public class AddController {
      * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody jako např. PromptText, itemy comboboxů a omezení textfieldů
      */
     public void initialize() {
-        addTransactionSum.setPromptText("Enter numbers only                        ");
-        addTransactionDescription.setPromptText("Short description");
+        addTransactionSum.setPromptText("enter numbers only");
+        addTransactionDescription.setPromptText("short description");
         addTransactionDate.setEditable(false);
 
         CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.RENT, Category.ENTERTAINMENT, Category.BUSINESS, Category.SPORT, Category.GROCERIES, Category.CHILDREN, Category.OTHER, Category.CHILDREN));
         CategoryComboBox_SPENDING.setItems(FXCollections.observableArrayList(Category.WAGE, Category.LOTTERY));
 
 
-        CategoryComboBox_GAIN.setPromptText("Choose category");
-        CategoryComboBox_SPENDING.setPromptText("Choose category");
+        CategoryComboBox_GAIN.setPromptText("choose category");
+        CategoryComboBox_SPENDING.setPromptText("choose category");
 
-        CategoryComboBox_GAIN.setTooltip(new Tooltip("Choose category"));
-        CategoryComboBox_SPENDING.setTooltip(new Tooltip("Choose category"));
+        CategoryComboBox_GAIN.setTooltip(new Tooltip("choose category"));
+        CategoryComboBox_SPENDING.setTooltip(new Tooltip("choose category"));
 
         CategoryComboBox_GAIN.setVisible(false);
         CategoryComboBox_SPENDING.setVisible(false);
 
 
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
-        addTransactionDate.setPromptText("Choose date");
-        addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
-        clearButton.setTooltip(new Tooltip("Clear all boxes"));
+        addTransactionDate.setPromptText("choose date");
+        addTransactionAdd.setTooltip(new Tooltip("add transaction to your list"));
+        clearButton.setTooltip(new Tooltip("clear all boxes"));
 
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             /**
@@ -94,27 +94,27 @@ public class AddController {
      */
     private void addTransactionToJSON() throws NoSuchAlgorithmException {
         if (addTransactionSum.getText().isEmpty()) {
-            add_alert.setText("Sum is mandatory");
+            add_alert.setText("Sum is mandatory.");
             return;
         }
 
         if ((CategoryComboBox_SPENDING.getSelectionModel().isEmpty())&&(CategoryComboBox_GAIN.getSelectionModel().isEmpty())) {
-           add_alert.setText("Category is mandatory");
+           add_alert.setText("Category is mandatory.");
            return;
         }
 
         if (add_gainComboBox.getSelectionModel().isEmpty()) {
-            add_alert.setText("Choose gain or spending");
+            add_alert.setText("Choose gain or spending.");
             return;
         }
 
         if (addTransactionDate.getValue() == null) {
-            add_alert.setText("Date is mandatory");
+            add_alert.setText("Date is mandatory.");
             return;
         }
 
         if (addTransactionDescription.getText().isEmpty()) {
-            add_alert.setText("Description is mandatory");
+            add_alert.setText("Description is mandatory.");
             return;
         }
         if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING") {
@@ -129,6 +129,7 @@ public class AddController {
                 (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
                 kategorie,
                 addDate, addTransactionDescription.getText());
+
         Menu.loadTransaction();
     }
 
@@ -152,6 +153,7 @@ public class AddController {
                 trans.add(transaction);
             }
         });
+        JSON.addTransactionToUser(transaction);
         JSON.saveData(userList);
     }
 
@@ -162,7 +164,6 @@ public class AddController {
         addTransactionAdd.setCursor(Cursor.HAND);
         add_alert.setText("");
         executeAdd();
-        //OverviewController.toGainOrSpanding();
     }
 
     /**

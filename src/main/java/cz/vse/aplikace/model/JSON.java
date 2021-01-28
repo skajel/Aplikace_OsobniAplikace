@@ -121,6 +121,14 @@ public class JSON {
         JSON.saveData(userList);
     }
 
+    public static void addTransactionToUser(JSONObject tran){
+        JSONObject currentUser = JSON.getCurrentUser();
+        JSONArray transactions = (JSONArray) currentUser.get(MainController.TRANSACTIONS);
+        transactions.add(tran);
+        currentUser.replace(MainController.TRANSACTIONS, transactions);
+        JSON.setCurrentUser(currentUser);
+    }
+
 
 
 
