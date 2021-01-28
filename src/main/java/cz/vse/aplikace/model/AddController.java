@@ -51,8 +51,6 @@ public class AddController {
      * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody jako např. PromptText, itemy comboboxů a omezení textfieldů
      */
     public void initialize() {
-        addTransactionSum.setPromptText("enter numbers only");
-        addTransactionDescription.setPromptText("short description");
         addTransactionDate.setEditable(false);
 
         CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.RENT, Category.ENTERTAINMENT, Category.BUSINESS, Category.SPORT, Category.GROCERIES, Category.CHILDREN, Category.OTHER, Category.CHILDREN));

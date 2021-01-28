@@ -78,10 +78,6 @@
                   <HBox.margin>
                      <Insets right="10.0" />
                   </HBox.margin></TextArea>
-                    <Button fx:id="update_graf" mnemonicParsing="false" onAction="#updateOverview" prefHeight="40.0" prefWidth="100.0" text="update">
-                  <HBox.margin>
-                     <Insets left="10.0" />
-                  </HBox.margin></Button>
                <VBox.margin>
                   <Insets left="60.0" />
                </VBox.margin>
