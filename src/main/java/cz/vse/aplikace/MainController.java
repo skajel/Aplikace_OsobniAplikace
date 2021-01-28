@@ -28,7 +28,6 @@ public class MainController {
 
     public static Stage primaryStage;
     public static Scene scene;
-    public Button account;
 
     public static void makeWindow(InputStream str) throws IOException{
         primaryStage = new Stage();
