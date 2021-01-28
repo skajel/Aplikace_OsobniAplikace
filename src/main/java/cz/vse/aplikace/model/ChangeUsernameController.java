@@ -1,14 +1,10 @@
 package cz.vse.aplikace.model;
 
-
 import cz.vse.aplikace.MainController;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
 
 public class ChangeUsernameController {
 
@@ -24,16 +20,7 @@ public class ChangeUsernameController {
     }
     public void saveUsername() {
         String newUsername = change_username.getText();
-        JSONObject currentUser = JSON.getCurrentUser();
-        currentUser.replace(MainController.USERNAME, newUsername);
-        JSON.setCurrentUser(currentUser);
-        JSONArray userList = JSON.loadData();
-        JSONObject currentUserInJSON = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
-        userList.remove(currentUserInJSON);
-        userList.add(currentUser);
-        JSON.saveData(userList);
-
-
+        JSON.changeStateInUser(newUsername);
         Menu.loadAccount();
     }
 

@@ -81,6 +81,17 @@ public class JSON {
         return user.get();
     }
 
+    public static void changeStateInUser(String str){
+        JSONObject currentUser = JSON.getCurrentUser();
+        currentUser.replace(MainController.USERNAME, str);
+        JSON.setCurrentUser(currentUser);
+        JSONArray userList = JSON.loadData();
+        JSONObject currentUserInJSON = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
+        userList.remove(currentUserInJSON);
+        userList.add(currentUser);
+        JSON.saveData(userList);
+    }
+
 
 
 
