@@ -47,7 +47,7 @@
                   <Insets bottom="5.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+            <TextArea fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
@@ -68,7 +68,7 @@
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin></Label>
-                        <TextField fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                        <TextArea fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
                             </children>
                             <HBox.margin>
                                 <Insets left="10.0" />
