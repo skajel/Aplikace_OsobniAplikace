@@ -39,11 +39,5 @@ public class Start extends Application {
     public void start(Stage primaryStage) throws Exception {
         InputStream stream = getClass().getClassLoader().getResourceAsStream("LoginScreen.fxml");
         MainController.makeWindow(stream);
-        SettingsController.swapPicture();
-        SettingsController.swapPicture();
-        SettingsController.swapPicture();
-        SettingsController.swapPicture();
-        SettingsController.swapPicture();
-        SettingsController.swapPicture();
     }
 }

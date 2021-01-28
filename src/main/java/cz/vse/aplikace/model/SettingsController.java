@@ -85,8 +85,11 @@ public class SettingsController {
     /**
      *
      */
-    public void setChangePicture() {
-        setChangePicture();
+    public static void changePicture(String newPicture) {
+
+        JSON.changeStateInUser(newPicture, MainController.PICTURE);
+
+
     }
 
     /**
@@ -131,14 +134,15 @@ public class SettingsController {
 
     }
 
-    public static void swapPicture(){
 
+    public void swapPicture(ActionEvent actionEvent) {
         int pictureLenght = (Pictures.values().length);
         currentPictureId++;
         if(currentPictureId>pictureLenght){
             currentPictureId=1;
         }
         currentPicture = Pictures.getById(currentPictureId).getDescription();
+        changePicture(currentPicture);
         System.out.println(currentPicture);
     }
 }
