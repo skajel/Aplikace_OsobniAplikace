@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.AddController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.AddController">
    <left>
        <VBox fx:id="add_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0">
           <children>
@@ -104,12 +104,12 @@
                      </VBox.margin></TextField>
                   <HBox alignment="CENTER">
                      <children>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="clear">
+                        <Button fx:id="clearButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="clear">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="add">
+                        <Button fx:id="addTransactionAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="add">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -131,7 +131,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-               <ComboBox fx:id="CategoryComboBox" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0">
+               <ComboBox fx:id="add_gainComboBox" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin></ComboBox>
@@ -143,8 +143,8 @@
                   <StackPane>
                      <children>
       
-                                    <ComboBox fx:id="add_gainComboBox" disable="true" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefWidth="120.0" />
-                        <ComboBox fx:id="add_gainComboBox1" disable="true" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefWidth="120.0" />
+                                    <ComboBox fx:id="CategoryComboBox_SPENDING" disable="true" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefWidth="120.0" />
+                        <ComboBox fx:id="CategoryComboBox_GAIN" disable="true" maxWidth="-Infinity" minWidth="-Infinity" onAction="#updateGainOrNot" prefWidth="120.0" />
                      </children>
                   </StackPane>
                </children>
