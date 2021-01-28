@@ -25,9 +25,9 @@
                     <VBox.margin>
                         <Insets bottom="20.0" left="10.0" top="20.0" />
                     </VBox.margin></Button>
-                <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                <ImageView  fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@logo.png" />
+                        <Image url="logo.png"/>
                     </image>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
@@ -41,8 +41,9 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="profilePic" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="updatePicture" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
+
                         <Insets left="198.0" top="15.0" />
                      </HBox.margin>
                   </ImageView>
