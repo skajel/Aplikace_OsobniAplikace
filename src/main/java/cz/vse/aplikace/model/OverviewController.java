@@ -1,6 +1,7 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
+import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -17,9 +18,9 @@ public class OverviewController {
     public Button overview_account;
 
     public PieChart chart;
-    public static TextArea total_gain;
-    public static TextArea total_spending;
-    public static TextArea current_balance;
+    public TextArea total_gain;
+    public TextArea total_spending;
+    public TextArea current_balance;
 
     private static double gain;
     private static double spending;
@@ -29,15 +30,48 @@ public class OverviewController {
      * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
      */
     public void initialize() {
+        total_gain.setEditable(false);
+        total_spending.setEditable(false);
+        current_balance.setEditable(false);
+
+        System.out.println(gain + "1");
+        resetTextAreas();
         toGainOrSpanding();
+        System.out.println(gain + "1");
+
+        total_gain.setText(String.valueOf(gain));
+        total_spending.setText((String.valueOf(spending)));
+        current_balance.setText((String.valueOf(Balance(gain, spending))));
+
+
 
     }
 
+    public void updateOverview(ActionEvent actionEvent) {
+        overview_account.setCursor(Cursor.HAND);
+
+        System.out.println(gain);
+        resetTextAreas();
+        toGainOrSpanding();
+        System.out.println(gain);
+
+        total_gain.setText(String.valueOf(gain));
+        total_spending.setText((String.valueOf(spending)));
+        current_balance.setText((String.valueOf(Balance(gain, spending))));
+
+
+    }
+
+    public void resetTextAreas(){
+        gain = 0;
+        spending = 0;
+
+    }
 
     /**
      * Metoda, která slouží ke sečtení výdajů a příjmů přihlášeného uživatele
      */
-        public static void toGainOrSpanding(){
+        public void toGainOrSpanding(){
 
             JSONObject user = JSON.getCurrentUser();
             JSONArray transactions  = (JSONArray) user.get(MainController.TRANSACTIONS);
@@ -49,15 +83,13 @@ public class OverviewController {
                     spending += ((double) ((JSONObject) transaction).get(MainController.AMOUNT));
                 }
 
-            });   total_gain.setText(String.valueOf(gain));
-            total_spending.setText((String.valueOf(spending)));
-            current_balance.setText((String.valueOf(Balance(gain, spending))));
+            });
         }
 
     /**
      * Metoda, která odečte výdaje od příjmů
      */
-        public static double Balance(double gain, double spending){
+        public double Balance(double gain, double spending){
             return gain-spending;
         }
 
@@ -85,5 +117,6 @@ public class OverviewController {
     public void loadTransaction(){
         overview_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();}
+
 
 }

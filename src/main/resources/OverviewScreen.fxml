@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.OverviewController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.OverviewController">
 
     <left>
         <VBox alignment="CENTER">
@@ -14,19 +14,23 @@
                 <Button fx:id="overview_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="100.0" text="Account">
                     <VBox.margin>
                         <Insets top="20.0" />
-                    </VBox.margin></Button>
+                    </VBox.margin>
+                </Button>
                 <Button fx:id="overview_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="100.0" text="Add">
                     <VBox.margin>
                         <Insets top="20.0" />
-                    </VBox.margin></Button>
+                    </VBox.margin>
+                </Button>
                 <Button fx:id="overview_transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="100.0" text="Transaction">
                     <VBox.margin>
                         <Insets top="20.0" />
-                    </VBox.margin></Button>
+                    </VBox.margin>
+                </Button>
                 <Button fx:id="overview_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="100.0" text="Overview">
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
-                    </VBox.margin></Button>
+                    </VBox.margin>
+                </Button>
                 <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@logo.png" />
@@ -36,33 +40,43 @@
                     </VBox.margin>
                 </ImageView>
             </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <padding>
-            <Insets left="20.0" right="20.0" />
-         </padding>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
         </VBox>
     </left>
 
     <center>
         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
-                    <Label text="Current balance">
-               <VBox.margin>
-                  <Insets bottom="5.0" top="20.0" />
-               </VBox.margin>
-            </Label>
-            <TextArea fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Label text="Current balance">
+                    <VBox.margin>
+                        <Insets bottom="5.0" right="235.0" top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox>
+                <TextArea fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0">
+                  <HBox.margin>
+                     <Insets left="70.0" />
+                  </HBox.margin></TextArea>
+                    <Button fx:id="update_graf" mnemonicParsing="false" onAction="#updateOverview" prefHeight="40.0" prefWidth="100.0" text="Update">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin></Button>
+                </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                             <children>
                                 <Label text="Total gain">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin></Label>
-                        <TextArea fx:id="total_gain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextArea fx:id="total_gain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
                             </children>
                             <HBox.margin>
                                 <Insets right="10.0" />
@@ -71,25 +85,27 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                             <children>
                                 <Label text="Total spending">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin></Label>
-                        <TextArea fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextArea fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
                             </children>
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </VBox>
                     </children>
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
+                    <VBox.margin>
+                        <Insets top="30.0" />
+                    </VBox.margin>
                 </HBox>
-            <PieChart fx:id="chart" title="gain x spending">
-               <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </VBox.margin></PieChart>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
+                <PieChart fx:id="chart" title="gain x spending">
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                    </VBox.margin>
+                </PieChart>
+                <HBox prefHeight="100.0" prefWidth="200.0" />
             </children>
         </VBox>
     </center>
