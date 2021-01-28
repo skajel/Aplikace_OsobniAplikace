@@ -13,10 +13,30 @@
     -fx-text-fill: #0A9951;
 }
 
-.text-field{
+.text-field, .text-area{
     -fx-padding: 1px;
     -fx-background-color: #0A9951;
     -fx-text-fill: white;
 }
 
+#transaction_menu, #overview_menu, #add_menu, #settings_menu{
+    -fx-background-color: #0A9951;
+}
+
+#transaction_menu .button, #overview_menu .button, #add_menu .button, #settings_menu .button{
+    -fx-background-color: #353535;
+    -fx-text-fill: white;
+}
+
+#transaction_menu .button:hover, #overview_menu .button:hover, #add_menu .button:hover, #settings_menu .button:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:hover{
+    -fx-text-fill: black;
+    -fx-background-color: #bbbcbf;
+}
 
