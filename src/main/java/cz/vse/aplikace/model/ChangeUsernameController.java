@@ -20,7 +20,7 @@ public class ChangeUsernameController {
     }
     public void saveUsername() {
         String newUsername = change_username.getText();
-        JSON.changeStateInUser(newUsername);
+        JSON.changeStateInUser(newUsername, MainController.USERNAME);
         Menu.loadAccount();
     }
 
