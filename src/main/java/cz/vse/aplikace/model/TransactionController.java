@@ -1,5 +1,6 @@
 package cz.vse.aplikace.model;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 /**
@@ -14,7 +15,6 @@ import javafx.scene.control.Button;
  */
 
 public class TransactionController {
-
 
     public Button transaction_account;
     public Button transaction_add;

@@ -33,7 +33,8 @@ public class SettingsController {
     public Button logOut;
     public static String currentPicture;
     public static int currentPictureId = 0;
-    public static ImageView updatePicture;
+    public static ImageView updatePicture1;
+
 
     /**
      *Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
@@ -103,16 +104,15 @@ public class SettingsController {
 
     }
 
-    public void supdatePicture(String picture){
+    public void updatePicture(String picture){
+
 
         InputStream Stream = getClass().getClassLoader().getResourceAsStream(picture);
         assert Stream != null;
         Image img = new Image(Stream);
-        updatePicture.setImage(img);
-        updatePicture.setFitWidth(60);
-        updatePicture.setFitHeight(60);
-
-
+        updatePicture1.setImage(img);
+        updatePicture1.setFitWidth(10);
+        updatePicture1.setFitHeight(60);
     }
 
     /**
@@ -154,7 +154,7 @@ public class SettingsController {
         }
         currentPicture = Pictures.getById(currentPictureId).getDescription();
         changePicture(currentPicture);
-        supdatePicture(currentPicture);
+        updatePicture(currentPicture);
         System.out.println(currentPicture+ "kurva proč nefunguju?");
 
     }
