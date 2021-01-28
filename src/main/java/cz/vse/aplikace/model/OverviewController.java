@@ -25,12 +25,18 @@ public class OverviewController {
     private static double spending;
 
 
+    /**
+     * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
+     */
     public void initialize() {
         toGainOrSpanding();
 
     }
 
 
+    /**
+     * Metoda, která slouží ke sečtení výdajů a příjmů přihlášeného uživatele
+     */
         public static void toGainOrSpanding(){
 
             JSONObject user = JSON.getCurrentUser();
@@ -48,19 +54,34 @@ public class OverviewController {
             current_balance.setText((String.valueOf(Balance(gain, spending))));
         }
 
+    /**
+     * Metoda, která odečte výdaje od příjmů
+     */
         public static double Balance(double gain, double spending){
             return gain-spending;
         }
 
 
+    /**
+     * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
+     */
     public void loadOverview() {
         overview_overview.setCursor(Cursor.CLOSED_HAND);}
+    /**
+     * Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
+     */
     public void loadAccount(){
         overview_account.setCursor(Cursor.HAND);
         Menu.loadAccount();}
+    /**
+     * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
+     */
     public void loadAdd(){
         overview_add.setCursor(Cursor.HAND);
         Menu.loadAdd(); }
+    /**
+     * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
+     */
     public void loadTransaction(){
         overview_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();}
