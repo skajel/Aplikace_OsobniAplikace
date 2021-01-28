@@ -69,7 +69,7 @@
                                 <Insets right="50.0" />
                             </HBox.margin>
                         </VBox>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="change view" textAlignment="CENTER">
+                        <Button alignment="CENTER" onAction="#update" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="change view" textAlignment="CENTER">
                             <HBox.margin>
                                 <Insets top="41.0" />
                             </HBox.margin>
@@ -77,42 +77,34 @@
                     </children>
                 </HBox>
                 <TableView fx:id="tableView">
-                    <columns>
-                        <TableColumn prefWidth="89.0" text="Amount">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="table_amount" />
-                            </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="108.0" text="Category">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="table_category" />
-                            </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="100.0" text="Date">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="table_date" />
-                            </cellValueFactory>
-                        </TableColumn>
-                        <TableColumn prefWidth="182.0" text="Description">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="table_description" />
-                            </cellValueFactory>
-                        </TableColumn>
-                    </columns>
-                    <items>
-                        <FXCollections fx:factory="observableArrayList">
-
-<!--                            <TransactionTable table_amount="amount" table_category="category" table_date="date"-->
-<!--                                              table_description="description"/>-->
-<!--                            <TransactionTable table_amount="amount2" table_category="category2" table_date="date2"-->
-<!--                                              table_description="description2"/>-->
-<!--                            <TransactionTable table_amount="amount3" table_category="category3" table_date="date3"-->
-<!--                                              table_description="description3"/>-->
-                        </FXCollections>
-                    </items>
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
-                    </VBox.margin>
+<!--                    <columns>-->
+<!--                        <TableColumn prefWidth="89.0" text="Amount">-->
+<!--                            <cellValueFactory>-->
+<!--                                <PropertyValueFactory property="table_amount" />-->
+<!--                            </cellValueFactory>-->
+<!--                        </TableColumn>-->
+<!--                        <TableColumn prefWidth="108.0" text="Category">-->
+<!--                            <cellValueFactory>-->
+<!--                                <PropertyValueFactory property="table_category" />-->
+<!--                            </cellValueFactory>-->
+<!--                        </TableColumn>-->
+<!--                        <TableColumn prefWidth="100.0" text="Date">-->
+<!--                            <cellValueFactory>-->
+<!--                                <PropertyValueFactory property="table_date" />-->
+<!--                            </cellValueFactory>-->
+<!--                        </TableColumn>-->
+<!--                        <TableColumn prefWidth="182.0" text="Description">-->
+<!--                            <cellValueFactory>-->
+<!--                                <PropertyValueFactory property="table_description" />-->
+<!--                            </cellValueFactory>-->
+<!--                        </TableColumn>-->
+<!--                    </columns>-->
+<!--                    <items>-->
+<!--                        <FXCollections fx:factory="observableArrayList" fx:id="table"/>-->
+<!--                    </items>-->
+<!--                    <VBox.margin>-->
+<!--                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />-->
+<!--                    </VBox.margin>-->
                 </TableView>
             </children>
 
