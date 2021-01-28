@@ -27,7 +27,7 @@
                     </VBox.margin></Button>
                 <ImageView  fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="logo.png"/>
+                        <Image url="@logo.png"/>
                     </image>
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
