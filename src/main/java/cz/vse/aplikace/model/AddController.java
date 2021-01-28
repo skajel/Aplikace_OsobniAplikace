@@ -112,7 +112,7 @@ public class AddController {
         addTransactionAdd.setCursor(Cursor.HAND);
         add_alert.setText("");
         executeAdd();
-        OverviewController.toGainOrSpanding();
+        //OverviewController.toGainOrSpanding();
     }
 
     public void executeAdd() {

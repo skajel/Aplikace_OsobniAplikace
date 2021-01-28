@@ -1,11 +1,12 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Cursor;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -17,9 +18,9 @@ public class OverviewController {
     public Button overview_account;
 
     public PieChart chart;
-    public static TextArea total_gain;
-    public static TextArea total_spending;
-    public static TextArea current_balance;
+    public TextArea total_gain;
+    public TextArea total_spending;
+    public TextArea current_balance;
 
     private static double gain;
     private static double spending;
@@ -29,9 +30,7 @@ public class OverviewController {
         toGainOrSpanding();
 
     }
-
-
-        public static void toGainOrSpanding(){
+        public void toGainOrSpanding(){
 
             JSONObject user = JSON.getCurrentUser();
             JSONArray transactions  = (JSONArray) user.get(MainController.TRANSACTIONS);
@@ -43,12 +42,23 @@ public class OverviewController {
                     spending += ((double) ((JSONObject) transaction).get(MainController.AMOUNT));
                 }
 
-            });   total_gain.setText(String.valueOf(gain));
+            });
+            total_gain.setText(String.valueOf(gain));
             total_spending.setText((String.valueOf(spending)));
             current_balance.setText((String.valueOf(Balance(gain, spending))));
+
+           makeGraph();
         }
 
-        public static double Balance(double gain, double spending){
+    private void makeGraph() {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("gain", gain),
+                        new PieChart.Data("spending", -spending));
+        chart.setData(pieChartData);
+    }
+
+    public static double Balance(double gain, double spending){
             return gain-spending;
         }
 
