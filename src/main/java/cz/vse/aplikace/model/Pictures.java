@@ -15,9 +15,9 @@ import java.util.HashMap;
 
 
 public enum Pictures {
-    PICTURE1(1,"picture1"),
-    PICTURE2(2,"picture2"),
-    PICTURE3(3,"picture3");
+    PICTURE1(1,"img1.jpg"),
+    PICTURE2(2,"img2.jpg"),
+    PICTURE3(3,"img3.jpg");
 
     private static HashMap<Integer, Pictures> enumById = new HashMap<>();
     static {

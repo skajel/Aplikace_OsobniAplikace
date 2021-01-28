@@ -52,7 +52,7 @@
                     <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                             <children>
-                                <Label text="Total gains">
+                                <Label text="Total gain">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin></Label>
@@ -64,7 +64,7 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                             <children>
-                                <Label text="Total spendings">
+                                <Label text="Total spending">
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin></Label>
@@ -79,10 +79,11 @@
                   <Insets top="30.0" />
                </VBox.margin>
                 </HBox>
-            <PieChart fx:id="chart" title="gain/spendings">
+            <PieChart fx:id="chart" title="gain x spending">
                <VBox.margin>
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </VBox.margin></PieChart>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
             </children>
         </VBox>
     </center>
