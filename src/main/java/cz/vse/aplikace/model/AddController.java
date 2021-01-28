@@ -31,15 +31,18 @@ public class AddController {
     public Button add_transaction;
     public Button add_add;
     public Button add_account;
-    public ComboBox<Category> CategoryComboBox;
+    public Button clearButton;
+    public Button addTransactionAdd;
     public ComboBox<GainOrNot> add_gainComboBox;
+    public ComboBox<Category> CategoryComboBox_GAIN;
+
     public TextField addTransactionSum;
     public DatePicker addTransactionDate;
     public TextField addTransactionDescription;
-    public Button addTransactionAdd;
+
     public Label add_alert;
     public double sum;
-    public Button clearButton;
+
 
 
     /**
@@ -49,13 +52,13 @@ public class AddController {
         addTransactionSum.setPromptText("Enter numbers only                        ");
         addTransactionDescription.setPromptText("Short description");
         addTransactionDate.setEditable(false);
-        CategoryComboBox.setPromptText("Choose category");
-        CategoryComboBox.setItems(FXCollections.observableArrayList(Category.values()));
+        CategoryComboBox_GAIN.setPromptText("Choose category");
+        CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.values()));
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
         addTransactionDate.setPromptText("Choose date");
         addTransactionAdd.setTooltip(new Tooltip("Add transaction to your list"));
         clearButton.setTooltip(new Tooltip("Clear all boxes"));
-        CategoryComboBox.setTooltip(new Tooltip("Choose category"));
+        CategoryComboBox_GAIN.setTooltip(new Tooltip("Choose category"));
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             /**
              * Metoda, která neumožní vložení jiných znaků než cifer do textfieldu
@@ -80,7 +83,7 @@ public class AddController {
             return;
         }
 
-        if (CategoryComboBox.getSelectionModel().isEmpty()) {
+        if (CategoryComboBox_GAIN.getSelectionModel().isEmpty()) {
             add_alert.setText("Category is mandatory");
             return;
         }
@@ -103,7 +106,7 @@ public class AddController {
         addTransaction((String) JSON.getCurrentUser().get(MainController.EMAIL),
                 sum = Integer.parseInt(addTransactionSum.getText()),
                 (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
-                (CategoryComboBox.getSelectionModel().getSelectedItem()).toString(),
+                (CategoryComboBox_GAIN.getSelectionModel().getSelectedItem()).toString(),
                 addDate, addTransactionDescription.getText());
         Menu.loadTransaction();
     }
@@ -198,14 +201,14 @@ public class AddController {
         addTransactionSum.clear();
         addTransactionDescription.clear();
         addTransactionDate.setValue(null);
-        CategoryComboBox.setValue(null);
+        CategoryComboBox_GAIN.setValue(null);
     }
 
     public void updateGainOrNot(ActionEvent actionEvent) {
         if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING"){
-            CategoryComboBox.setItems(FXCollections.observableArrayList(Category.RENT,Category.ENTERTAINMENT,Category.BUSINESS,Category.SPORT,Category.GROCERIES,Category.CHILDREN,Category.OTHER,Category.CHILDREN));
+            CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.RENT,Category.ENTERTAINMENT,Category.BUSINESS,Category.SPORT,Category.GROCERIES,Category.CHILDREN,Category.OTHER,Category.CHILDREN));
             }else {
-        CategoryComboBox.setItems(FXCollections.observableArrayList(Category.WAGE,Category.LOTTERY));
+            CategoryComboBox_GAIN.setItems(FXCollections.observableArrayList(Category.WAGE,Category.LOTTERY));
         }
     }
 }
