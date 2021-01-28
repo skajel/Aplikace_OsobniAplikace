@@ -57,21 +57,11 @@ public class AddController {
         CategoryComboBox_SPENDING.setItems(FXCollections.observableArrayList(Category.WAGE, Category.LOTTERY));
 
 
-        CategoryComboBox_GAIN.setPromptText("choose category");
-        CategoryComboBox_SPENDING.setPromptText("choose category");
-
-        CategoryComboBox_GAIN.setTooltip(new Tooltip("choose category"));
-        CategoryComboBox_SPENDING.setTooltip(new Tooltip("choose category"));
-
         CategoryComboBox_GAIN.setVisible(false);
         CategoryComboBox_SPENDING.setVisible(false);
 
 
         add_gainComboBox.setItems(FXCollections.observableArrayList(GainOrNot.values()));
-        addTransactionDate.setPromptText("choose date");
-        addTransactionAdd.setTooltip(new Tooltip("add transaction to your list"));
-        clearButton.setTooltip(new Tooltip("clear all boxes"));
-
         addTransactionSum.textProperty().addListener(new ChangeListener<String>() {
             /**
              * Metoda, která neumožní vložení jiných znaků než cifer do textfieldu

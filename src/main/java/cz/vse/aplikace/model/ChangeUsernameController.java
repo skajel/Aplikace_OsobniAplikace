@@ -25,19 +25,26 @@ public class ChangeUsernameController {
     public TextField change_username;
     public Button change_save;
     public Label change_labelUsername;
+    public Label user_alert;
 
     /**
      * Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
      */
     public void initialize(){
         setLabelUsername();
+        user_alert.setText("");
     }
 
     /**
      * Metoda ukládá změněné username do JSON.json
      */
     public void saveUsername() {
+        user_alert.setText("");
         String newUsername = change_username.getText();
+        if(newUsername.isEmpty()){
+            user_alert.setText("You have to fill in a username.");
+            return;
+        }
         JSON.changeStateInUser(newUsername, MainController.USERNAME);
         Menu.loadAccount();
     }

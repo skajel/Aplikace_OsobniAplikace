@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 /**
@@ -28,14 +29,13 @@ public class SettingsController {
     public Button settings_transaction;
     public Button settings_overview;
     public Button changeUsername;
-    public Button clearTransactions;
     public Button changePicture;
-    public Button changeTheme;
     public Button logOut;
     public static String currentPicture;
     public static int currentPictureId = 0;
     public static ImageView updatePicture1;
     public Label settings_username;
+    public static BorderPane f;
 
 
     /**
@@ -91,6 +91,11 @@ public class SettingsController {
         changeUsername.setCursor(Cursor.HAND);
         Menu.loadChangeUsername();
     }
+
+    public void loadChangePicture(){
+        changeUsername.setCursor(Cursor.HAND);
+        Menu.loadChangePicture();
+    }
     /**
      *
      */
@@ -121,40 +126,19 @@ public class SettingsController {
     }
 
     /**
-     *
-     */
-    public void setClearTransactions() {
-        clearTransactions();
-    }
-
-    /**
-     *Metoda, která smaže transakce aktuálního/přihlášeného uživatele
-     */
-    public void clearTransactions() {
-
-    }
-
-    /**
-     *
-     */
-    public void setChangeTheme() {
-
-    }
-
-
-    /**
      * Metoda, která upravuje Button - change picture, provede změnu obrázku aktuálního/přihlášeného uživatele
      */
     public void swapPicture(ActionEvent actionEvent) {
-        int pictureLenght = (Pictures.values().length);
-        currentPictureId++;
-        if(currentPictureId>pictureLenght){
-            currentPictureId=1;
-        }
-        currentPicture = Pictures.getById(currentPictureId).getDescription();
-        changePicture(currentPicture);
-        updatePicture(currentPicture);
-        System.out.println(currentPicture+ "kurva proč nefunguju?");
+        loadChangePicture();
+//        int pictureLenght = (Pictures.values().length);
+//        currentPictureId++;
+//        if(currentPictureId>pictureLenght){
+//            currentPictureId=1;
+//        }
+//        currentPicture = Pictures.getById(currentPictureId).getDescription();
+//        changePicture(currentPicture);
+//        updatePicture(currentPicture);
+//        System.out.println(currentPicture+ "kurva proč nefunguju?");
 
     }
 }

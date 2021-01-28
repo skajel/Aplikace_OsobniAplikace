@@ -38,6 +38,7 @@ public class OverviewController {
 
         resetTextAreas();
         toGainOrSpanding();
+        makeGraph();
 
         total_gain.setText(String.valueOf(gain));
         total_spending.setText((String.valueOf(spending)));
@@ -47,18 +48,19 @@ public class OverviewController {
 
     }
 
-    public void updateOverview(ActionEvent actionEvent) {
-        overview_account.setCursor(Cursor.HAND);
-
-        resetTextAreas();
-        toGainOrSpanding();
-
-        total_gain.setText(String.valueOf(gain));
-        total_spending.setText((String.valueOf(spending)));
-        current_balance.setText((String.valueOf(Balance(gain, spending))));
-
-
-    }
+//    public void updateOverview(ActionEvent actionEvent) {
+//        overview_account.setCursor(Cursor.HAND);
+//
+//        resetTextAreas();
+//        toGainOrSpanding();
+//        makeGraph();
+//
+//        total_gain.setText(String.valueOf(gain));
+//        total_spending.setText((String.valueOf(spending)));
+//        current_balance.setText((String.valueOf(Balance(gain, spending))));
+//
+//
+//    }
 
     public void resetTextAreas(){
         gain = 0;
@@ -80,7 +82,6 @@ public class OverviewController {
                 }
 
             });
-            makeGraph();
         }
 
     private void makeGraph() {
@@ -88,7 +89,7 @@ public class OverviewController {
                 FXCollections.observableArrayList(
                         new PieChart.Data("gain", gain),
                         new PieChart.Data("spending", spending));
-        chart = new PieChart(pieChartData);
+        chart.setData(pieChartData);
     }
 
     /**

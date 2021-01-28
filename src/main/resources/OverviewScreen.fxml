@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.OverviewController">
+<BorderPane fx:id="d" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.OverviewController">
 
     <left>
         <VBox fx:id="overview_menu" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0">
@@ -57,70 +57,80 @@
     <center>
         <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" BorderPane.alignment="CENTER">
             <children>
-            <Label prefWidth="500.0" text="OVERVIEW">
+            <VBox fx:id="overviewInfo" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefWidth="500.0" text="OVERVIEW">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                  </Label>
+                      <Label prefWidth="500.0" text="current balance">
+                          <VBox.margin>
+                              <Insets bottom="10.0" left="60.0" top="20.0" />
+                          </VBox.margin>
+                      </Label>
+                      <HBox>
+                      <TextArea fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </TextArea>
+                     <VBox.margin>
+                        <Insets left="60.0" />
+                     </VBox.margin>
+                      </HBox>
+                      <HBox alignment="CENTER_LEFT">
+                          <children>
+                              <VBox prefWidth="100.0">
+                                  <children>
+                                      <Label text="total gain">
+                                          <VBox.margin>
+                                              <Insets bottom="10.0" />
+                                          </VBox.margin>
+                                      </Label>
+                                      <TextArea fx:id="total_gain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                                  </children>
+                                  <HBox.margin>
+                                      <Insets left="60.0" right="10.0" />
+                                  </HBox.margin>
+                              </VBox>
+                              <VBox prefWidth="100.0">
+                                  <children>
+                                      <Label text="total spending">
+                                          <VBox.margin>
+                                              <Insets bottom="10.0" />
+                                          </VBox.margin>
+                                      </Label>
+                                      <TextArea fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                                  </children>
+                                  <HBox.margin>
+                                      <Insets left="10.0" />
+                                  </HBox.margin>
+                              </VBox>
+                          </children>
+                          <VBox.margin>
+                              <Insets top="10.0" />
+                          </VBox.margin>
+                      </HBox>
+               </children>
                <VBox.margin>
-                  <Insets top="30.0" />
+                  <Insets />
                </VBox.margin>
-               <font>
-                  <Font size="17.0" />
-               </font>
                <padding>
-                  <Insets left="60.0" />
+                  <Insets bottom="20.0" />
                </padding>
-            </Label>
-                <Label prefWidth="500.0" text="current balance">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="60.0" top="20.0" />
-                    </VBox.margin>
-                </Label>
-                <HBox>
-                <TextArea fx:id="current_balance" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0">
-                  <HBox.margin>
-                     <Insets right="10.0" />
-                  </HBox.margin></TextArea>
-               <VBox.margin>
-                  <Insets left="60.0" />
-               </VBox.margin>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                            <children>
-                                <Label text="total gain">
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                </Label>
-                                <TextArea fx:id="total_gain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
-                            </children>
-                            <HBox.margin>
-                                <Insets left="60.0" right="10.0" />
-                            </HBox.margin>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                            <children>
-                                <Label text="total spending">
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                </Label>
-                                <TextArea fx:id="total_spending" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
-                            </children>
-                            <HBox.margin>
-                                <Insets left="10.0" />
-                            </HBox.margin>
-                        </VBox>
-                    </children>
-                    <VBox.margin>
-                        <Insets top="10.0" />
-                    </VBox.margin>
-                </HBox>
+            </VBox>
                 <PieChart fx:id="chart">
-                    <VBox.margin>
-                        <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
-                    </VBox.margin>
-                </PieChart>
-                <HBox prefHeight="100.0" prefWidth="200.0" />
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </PieChart>
             </children>
         </VBox>
     </center>

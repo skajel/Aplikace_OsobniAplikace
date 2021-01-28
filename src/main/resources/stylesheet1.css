@@ -1,6 +1,9 @@
 *{
-    -fx-background-color: #353535;
     -fx-text-fill: white;
+}
+
+#a, #b, #c, #e, #f, #g, #h, #add_content{
+    -fx-background-color: #353535;
 }
 
 .button{
@@ -47,6 +50,20 @@
 #dateContent{
     -fx-background-color: #bbbcbf;
 }
+
+
+#overviewInfo .text-field, #overviewInfo .text-area, #overviewInfo .combo-box, #overviewInfo .table-view{
+    -fx-text-fill: black;
+}
+
+#overviewInfo {
+    -fx-background-color: #353535;
+    -fx-text-fill: black;
+}
+
+
+
+
 
 
 
