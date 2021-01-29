@@ -76,7 +76,7 @@
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="tableView">
+                <TableView fx:id="transakcepl">
 <!--                    <columns>-->
 <!--                        <TableColumn prefWidth="89.0" text="Amount">-->
 <!--                            <cellValueFactory>-->
