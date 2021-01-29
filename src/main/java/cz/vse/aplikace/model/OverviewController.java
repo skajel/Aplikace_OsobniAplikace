@@ -100,8 +100,6 @@ public class OverviewController {
     /**
      * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
      */
-    public void loadTransaction(){
-        Menu.loadTransaction();}
 
 
 }

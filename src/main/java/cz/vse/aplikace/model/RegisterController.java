@@ -66,7 +66,7 @@ public class RegisterController {
         }
 
         addUser(username.getText(), MainController.toHexString(MainController.getSHA(register_password.getText())), register_email.getText());
-        Menu.loadTransaction();
+        Menu.loadAdd();
 
 
 

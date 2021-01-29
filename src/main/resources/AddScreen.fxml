@@ -9,45 +9,44 @@
 
 <BorderPane fx:id="c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.AddController">
    <left>
-       <VBox fx:id="add_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0">
-          <children>
-             <Button fx:id="add_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="50.0" prefWidth="110.0" text="ACCOUNT">
-                <VBox.margin>
-                   <Insets top="20.0" />
-                </VBox.margin>
+      <VBox fx:id="add_menu" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0">
+         <children>
+            <Button fx:id="add_account" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="110.0" text="ACCOUNT">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </Button>
-             <Button fx:id="add_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="50.0" prefWidth="110.0" text="ADD">
-                <VBox.margin>
-                   <Insets top="20.0" />
-                </VBox.margin>
+            <Button fx:id="add_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="110.0" text="ADD">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </Button>
-             <Button fx:id="add_transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="50.0" prefWidth="110.0" text="TRANSACTIONS">
-                <VBox.margin>
-                   <Insets top="20.0" />
-                </VBox.margin>
+            <Button fx:id="add_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="110.0" text="OVERVIEW">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
             </Button>
-             <Button fx:id="add_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="50.0" prefWidth="110.0" text="OVERVIEW">
-                <VBox.margin>
-                   <Insets bottom="20.0" top="20.0" />
-                </VBox.margin>
-            </Button>
-             <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
-                <image>
-                   <Image url="@logo.png" />
-                </image>
-                <VBox.margin>
-                   <Insets bottom="20.0" top="20.0" />
-                </VBox.margin>
+            <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
                <effect>
                   <DropShadow />
                </effect>
-             </ImageView>
-          </children>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
          <padding>
             <Insets left="20.0" right="20.0" />
          </padding>
-       </VBox>
+      </VBox>
    </left>
+
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>

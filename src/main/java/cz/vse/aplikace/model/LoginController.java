@@ -62,8 +62,7 @@ public class LoginController {
         }
 
         JSON.setCurrentUser(user);
-        Menu.loadTransaction();
-
+        Menu.loadAdd();
     }
 
 

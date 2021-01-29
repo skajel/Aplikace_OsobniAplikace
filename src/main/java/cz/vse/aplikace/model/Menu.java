@@ -50,17 +50,6 @@ public class Menu {
         }
     }
     /**
-     * Tato metoda nastaví obrazovku na TransactionScreen.fxml
-     */
-    public static void loadTransaction(){
-        InputStream stream = Menu.class.getClassLoader().getResourceAsStream("TransactionScreen.fxml");
-        try {
-            MainController.changeScene(stream);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    /**
      * Tato metoda nastaví obrazovku na LoginScreen.fxml
      */
     public static void loadLogin(){

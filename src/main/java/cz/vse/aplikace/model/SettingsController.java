@@ -57,13 +57,6 @@ public class SettingsController {
     }
 
     /**
-     *Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
-     */
-    public void loadTransaction() {
-        Menu.loadTransaction();
-    }
-
-    /**
      *Metoda, která upravuje Button - Log out, provede změnu scény na LoginScreen.fxml
      */
     public void loadLogin() {

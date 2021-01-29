@@ -116,7 +116,7 @@ public class AddController {
                 kategorie,
                 addDate, addTransactionDescription.getText());
 
-        Menu.loadTransaction();
+        Menu.loadOverview();
     }
 
     /**
@@ -176,13 +176,6 @@ public class AddController {
      * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
      */
     public void loadAdd() {
-    }
-
-    /**
-     * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
-     */
-    public void loadTransaction() {
-        Menu.loadTransaction();
     }
 
     /**

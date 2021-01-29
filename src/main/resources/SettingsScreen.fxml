@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="f" prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
+<BorderPane fx:id="f" prefHeight="400.0" prefWidth="650.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
     <left>
         <VBox fx:id="settings_menu" alignment="CENTER" prefHeight="400.0" prefWidth="150.0">
             <children>
@@ -15,10 +15,6 @@
                         <Insets top="20.0" />
                     </VBox.margin></Button>
                 <Button fx:id="setting_add" mnemonicParsing="false" onAction="#loadAdd" prefHeight="40.0" prefWidth="110.0" text="ADD">
-                    <VBox.margin>
-                        <Insets top="20.0" />
-                    </VBox.margin></Button>
-                <Button fx:id="settings_transaction" mnemonicParsing="false" onAction="#loadTransaction" prefHeight="40.0" prefWidth="110.0" text="TRANSACTIONS">
                     <VBox.margin>
                         <Insets top="20.0" />
                     </VBox.margin></Button>
@@ -55,7 +51,7 @@
                   </Label>
                   <Label fx:id="settings_username">
                      <HBox.margin>
-                        <Insets left="5.0" />
+                        <Insets />
                      </HBox.margin>
                   </Label>
                </children>
