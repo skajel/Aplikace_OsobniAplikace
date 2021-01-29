@@ -1,12 +1,12 @@
 package cz.vse.aplikace;
 
 import cz.vse.aplikace.model.JSON;
-import junit.framework.TestCase;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.After;
 import org.junit.Before;
-import sun.applet.Main;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Třída cz.vse.aplikace.RegisterControllerTest je součástí testl pto aplikaci pro vedení přehledu výdajů a příjmů.
@@ -18,13 +18,13 @@ import sun.applet.Main;
  * @created leden 2021 pro ZS 2020/2021
  */
 
-public class RegisterControllerTest extends TestCase {
+public class RegisterControllerTest {
 
     /**
-     * Metoda před testem vytvoří objekt usser v JSON. Vloží zadané parametry.
+     * Metoda před testem vytvoří objekt user v JSON. Vloží zadané parametry.
      */
     @Before
-    public void setUp(){
+    public void before(){
         JSONObject user = new JSONObject();
         user.put(MainController.USERNAME, "user");
         user.put(MainController.PASSWORD, "password");
@@ -35,11 +35,13 @@ public class RegisterControllerTest extends TestCase {
         JSON.saveData(userList);
         JSON.setCurrentUser(user);
 
+
     }
 
     /**
      * Metoda testuje assertEquals na současné uživatelské jméno uživatele a to uložené
      */
+    @Test
     public void testUsername() {
         assertEquals("user",JSON.getCurrentUser().get(MainController.USERNAME).toString());
     }
@@ -47,6 +49,7 @@ public class RegisterControllerTest extends TestCase {
     /**
      * Metoda testuje assertEquals na současný heslo uživatele a to uložené
      */
+    @Test
     public void testPassword() {
         assertEquals("password",JSON.getCurrentUser().get(MainController.PASSWORD).toString());
     }
@@ -54,6 +57,7 @@ public class RegisterControllerTest extends TestCase {
     /**
      * Metoda testuje assertEquals na současný email uživatele a ten uložený
      */
+    @Test
     public void testEmail() {
         assertEquals("user@user.cz",JSON.getCurrentUser().get(MainController.EMAIL).toString());
     }
@@ -61,7 +65,20 @@ public class RegisterControllerTest extends TestCase {
     /**
      * Metoda testuje assertEquals na současný obrázek uživatele a ten vložený
      */
+    @Test
     public void testPicture() {
         assertEquals("img1.jpg",JSON.getCurrentUser().get(MainController.PICTURE).toString());
+    }
+
+    /**
+     * Metoda po testu vymaže objekt user z JSON.
+     */
+
+    @After
+    public void after(){
+        JSONArray userList = JSON.loadData();
+        JSONObject user = JSON.findUser((String) JSON.getCurrentUser().get(MainController.EMAIL));
+        userList.remove(user);
+        JSON.saveData(userList);
     }
 }
