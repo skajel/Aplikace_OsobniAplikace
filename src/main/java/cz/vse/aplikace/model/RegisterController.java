@@ -1,7 +1,6 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
-import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -94,7 +93,6 @@ public class RegisterController {
      */
     public void submit(MouseEvent mouseEvent) {
         register_alert.setText("");
-        sign_up.setCursor(Cursor.HAND);
         executeSubmit();
     }
     /**

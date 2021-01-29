@@ -32,7 +32,6 @@ public class LoginController {
      */
     public void signIn() throws NoSuchAlgorithmException {
         login_alert.setText("");
-        sign_in.setCursor(Cursor.HAND);
         checkUser();
     }
 

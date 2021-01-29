@@ -1,6 +1,9 @@
 *{
+    -fx-text-fill: #0A9951;
+}
+
+#a, #b, #c, #e, #f, #g, #h, #add_content{
     -fx-background-color: #353535;
-    -fx-text-fill: white;
 }
 
 .button{
@@ -19,8 +22,8 @@
 
 .text-field, .text-area, .combo-box, .table-view{
     -fx-padding: 1px;
-    -fx-background-color: #0A9951;
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: black;
 }
 
 #transaction_menu, #overview_menu, #add_menu, #settings_menu{
@@ -42,11 +45,26 @@
 .button:hover{
     -fx-text-fill: black;
     -fx-background-color: #bbbcbf;
+    -fx-cursor: HAND;
 }
 
 #dateContent{
     -fx-background-color: #bbbcbf;
 }
+
+
+#overviewInfo .text-field, #overviewInfo .text-area, #overviewInfo .combo-box, #overviewInfo .table-view{
+    -fx-text-fill: black;
+}
+
+#overviewInfo {
+    -fx-background-color: #353535;
+    -fx-text-fill: black;
+}
+
+
+
+
 
 
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
+<BorderPane fx:id="f" prefHeight="400.0" prefWidth="600.0" stylesheets="stylesheet1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.aplikace.model.SettingsController">
     <left>
         <VBox fx:id="settings_menu" alignment="CENTER" prefHeight="400.0" prefWidth="150.0">
             <children>
@@ -44,7 +44,7 @@
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="updatePicture1" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@img1.jpg" />
+                <Image url="@img1.png" />
             </ImageView>
             <HBox alignment="CENTER">
                <children>
@@ -67,41 +67,15 @@
                <children>
                   <Button fx:id="changeUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangeUsername" prefHeight="40.0" prefWidth="130.0" text="change username">
                      <HBox.margin>
-                        <Insets right="10.0" top="10.0" />
+                        <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="clearTransactions" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setClearTransactions" prefHeight="40.0" prefWidth="130.0" text="clear transactions" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
+                  <Button fx:id="logOut" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loadLogin" prefHeight="40.0" prefWidth="110.0" text="log out" />
                </children>
                <VBox.margin>
                   <Insets bottom="25.0" top="25.0" />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER">
-               <children>
-                  <Button fx:id="changeTheme" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setChangeTheme" prefHeight="40.0" prefWidth="130.0" text="change theme">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="changePicture" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#swapPicture" prefHeight="40.0" prefWidth="130.0" text="change picture">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <Button fx:id="logOut" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loadLogin" prefHeight="40.0" prefWidth="110.0" text="LOG OUT">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
    </center>
