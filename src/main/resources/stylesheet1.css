@@ -1,5 +1,5 @@
 *{
-    -fx-text-fill: white;
+    -fx-text-fill: #0A9951;
 }
 
 #a, #b, #c, #e, #f, #g, #h, #add_content{
@@ -22,8 +22,8 @@
 
 .text-field, .text-area, .combo-box, .table-view{
     -fx-padding: 1px;
-    -fx-background-color: #0A9951;
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: black;
 }
 
 #transaction_menu, #overview_menu, #add_menu, #settings_menu{
