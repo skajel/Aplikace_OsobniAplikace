@@ -1,16 +1,9 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.TransformationList;
-import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -31,88 +24,33 @@ public class TransactionController {
     public Button transaction_add;
     public Button transaction_transaction;
     public Button transaction_overview;
-    public static TableView<JSONArray> transakcepl;
-    public static JSONArray oneTransaction;
-    public static String amount;
-    public static String category;
-    public static String date;
-    public static String description;
+    public static VBox list;
 
-//    private final SimpleStringProperty table_amount = new SimpleStringProperty("45");
-//    private final SimpleStringProperty table_category = new SimpleStringProperty("654");
-//    private final SimpleStringProperty table_date = new SimpleStringProperty("546");
-//    private final SimpleStringProperty table_description = new SimpleStringProperty("654");
-//
-//    public TransactionController() {
-//        this("", "", "","");
-//
-//    }
-//
-//    public TransactionController(String table_amount, String table_category, String table_date,String table_description) {
-//        setTable_amount(table_amount);
-//        setTable_category(table_category);
-//        setTable_date(table_date);
-//        setTable_description(table_description);
-//    }
 
-    public static void initialize() {
-
-//        iterateTransactions(getTransaction());
-//        TableColumn<String, String> amountCollumn = new TableColumn<>("Amount");
-//        amountCollumn.setPrefWidth(100);
-//        amountCollumn.setCellValueFactory(new PropertyValueFactory<>(MainController.AMOUNT.toString()));
-//
-//
-//        TableColumn<String, String> categoryCollumn = new TableColumn<>("Category");
-//        categoryCollumn.setPrefWidth(100);
-//        categoryCollumn.setCellValueFactory(new PropertyValueFactory<>(MainController.CATEGORY.toString()));
-//
-//        TableColumn<String, String> dateCollumn = new TableColumn<>("Date");
-//        dateCollumn.setPrefWidth(100);
-//        dateCollumn.setCellValueFactory(new PropertyValueFactory<>(MainController.DATE.toString()));
-//
-//        TableColumn<String, String> descriptionCollumn = new TableColumn<>("Description");
-//        descriptionCollumn.setPrefWidth(100);
-//        descriptionCollumn.setCellValueFactory(new PropertyValueFactory<>(MainController.DESCRIPTION.toString()));
+    public void initialize() {
+        System.out.println("Hello");
+        iterateTransactions(getTransaction());
     }
 
 
-    public static JSONArray getTransaction() {
+    public JSONArray getTransaction() {
         JSONObject user = JSON.getCurrentUser();
         JSONArray transactions = (JSONArray) user.get(MainController.TRANSACTIONS);
         return transactions;
     }
 
-    public static JSONObject iterateTransactions(JSONArray transactions) {
-        transactions.forEach(transaction -> {
-            oneTransaction = (JSONObject) ((JSONObject) transaction).get(MainController.TRANSACTIONS);
+    public void iterateTransactions(JSONArray transactions) {
+            transactions.forEach(transaction -> {
+            double amount = (double) ((JSONObject) transaction).get(MainController.AMOUNT);
+            String category = (String) ((JSONObject) transaction).get(MainController.CATEGORY);
+            String date = (String) ((JSONObject) transaction).get(MainController.DATE);
+            String description = (String) ((JSONObject) transaction).get(MainController.DESCRIPTION);
+
+            String str = (amount + ", " + category + ", " + date + ", " + description);
+            Label label = new Label(str);
+            list.getChildren().add(label);
+            return;
         });}
-
-//            oneTransaction.forEach(transaction2 -> {
-//                 amount = (String) ((JSONObject) transaction2).get(MainController.AMOUNT);
-//                 categoty = (String) ((JSONObject) transaction2).get(MainController.CATEGORY);
-//                 date = (String) ((JSONObject) transaction2).get(MainController.DATE);
-//                 description = (String) ((JSONObject) transaction2).get(MainController.DESCRIPTION);
-//
-
-
-        public static void iterateTransactions2 (JSONArray oneTransaction){
-            oneTransaction.forEach(transaction -> {
-                amount = (String) ((JSONObject) transaction).get(MainController.AMOUNT);
-                category = (String) ((JSONObject) transaction).get(MainController.CATEGORY);
-                date = (String) ((JSONObject) transaction).get(MainController.DATE);
-                description = (String) ((JSONObject) transaction).get(MainController.DESCRIPTION);
-            });
-        }
-
-               ObservableList < JSONArray > transakcepl = FXCollections.observableArrayList();
-                transakcepl.add(new JSONArray(amount,category));
-
-        public void update (ActionEvent actionEvent){
-            iterateTransactions(getTransaction());
-        }
-
-
         /**
          * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
          */
