@@ -63,12 +63,11 @@ public class SettingsController {
     }
 
     /**
-     *
+     * Metoda na ovládání buttonu changeUsername
      */
     public void setChangeUsername(){
         loadChangeUsername();
     }
-
 }
 
 

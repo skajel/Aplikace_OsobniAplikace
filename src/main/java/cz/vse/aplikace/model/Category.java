@@ -14,7 +14,6 @@ import java.util.HashMap;
  * @created leden 2021 pro ZS 2020/2021
  */
 
-
 public enum Category {
     RENT(1,"SPENDING"),
     ENTERTAINMENT(2,"SPENDING"),
@@ -35,16 +34,20 @@ public enum Category {
     private int id;
     private String description;
 
+    /**
+     * Metoda vrací category dle id a popisun transakce
+     */
     Category(int id, String description) {
         this.id = id;
         this.description= description;
     }
 
+    /**
+     * Metoda vraci id transakce
+     */
     public int getId() {
         return id;
     }
-
-
 }
 
 

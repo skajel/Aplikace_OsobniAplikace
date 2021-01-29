@@ -64,12 +64,19 @@ public class MainController {
         primaryStage.setScene((new Scene(root)));
     }
 
+    /**
+     * Metoda vrací zahashované heslo
+     */
     public static byte[] getSHA(String input) throws NoSuchAlgorithmException
     {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(input.getBytes(StandardCharsets.UTF_8));
     }
 
+
+    /**
+     * Metoda vytváří eze zahashovaného hesla String
+     */
     public static String toHexString(byte[] hash)
     {
         BigInteger number = new BigInteger(1, hash);

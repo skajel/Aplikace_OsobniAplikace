@@ -121,6 +121,9 @@ public class JSON {
         JSON.saveData(userList);
     }
 
+    /**
+     * Metoda přiřazuje transakci k současnému uživateki (currentUser)
+     */
     public static void addTransactionToUser(JSONObject tran){
         JSONObject currentUser = JSON.getCurrentUser();
         JSONArray transactions = (JSONArray) currentUser.get(MainController.TRANSACTIONS);

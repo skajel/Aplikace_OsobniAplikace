@@ -189,6 +189,9 @@ public class AddController {
         CategoryComboBox_SPENDING.setValue(null);
     }
 
+    /**
+     * Metoda rozhoduje jestli se jedná o GAIN or SPANDING a podle toho zobrazuje kategorie
+     */
     public void updateGainOrNot(ActionEvent actionEvent) {
         if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING") {
             CategoryComboBox_SPENDING.setVisible(false);
