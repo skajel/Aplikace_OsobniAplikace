@@ -4,7 +4,9 @@ import cz.vse.aplikace.model.JSON;
 import junit.framework.TestCase;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.junit.After;
 import org.junit.Before;
+import sun.applet.Main;
 
 /**
  * Třída cz.vse.aplikace.RegisterControllerTest je součástí testl pto aplikaci pro vedení přehledu výdajů a příjmů.
@@ -32,7 +34,6 @@ public class RegisterControllerTest extends TestCase {
         userList.add(user);
         JSON.saveData(userList);
         JSON.setCurrentUser(user);
-
 
     }
 

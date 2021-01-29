@@ -27,7 +27,6 @@ public class SettingsController {
     public Label settings_username;
     public static BorderPane f;
 
-
     /**
      *Tato metoda inicializuje vložené úpravy a vyvolává vložené metody
      */
