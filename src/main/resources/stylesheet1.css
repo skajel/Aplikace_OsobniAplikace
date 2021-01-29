@@ -45,6 +45,7 @@
 .button:hover{
     -fx-text-fill: black;
     -fx-background-color: #bbbcbf;
+    -fx-cursor: HAND;
 }
 
 #dateContent{

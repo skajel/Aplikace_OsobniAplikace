@@ -48,20 +48,6 @@ public class OverviewController {
 
     }
 
-//    public void updateOverview(ActionEvent actionEvent) {
-//        overview_account.setCursor(Cursor.HAND);
-//
-//        resetTextAreas();
-//        toGainOrSpanding();
-//        makeGraph();
-//
-//        total_gain.setText(String.valueOf(gain));
-//        total_spending.setText((String.valueOf(spending)));
-//        current_balance.setText((String.valueOf(Balance(gain, spending))));
-//
-//
-//    }
-
     public void resetTextAreas(){
         gain = 0;
         spending = 0;

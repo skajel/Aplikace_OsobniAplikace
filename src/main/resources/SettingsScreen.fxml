@@ -44,7 +44,7 @@
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="updatePicture1" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@img1.jpg" />
+                <Image url="@img1.png" />
             </ImageView>
             <HBox alignment="CENTER">
                <children>

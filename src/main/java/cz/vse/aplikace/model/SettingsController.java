@@ -1,15 +1,11 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
-import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 /**
  * Třída cz.vse.aplikace.model.SettingsController je součástí aplikace pro vedení přehledu výdajů a příjmů.
  * <p>

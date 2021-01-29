@@ -42,13 +42,9 @@ public enum Category {
     private int id;
     private String description;
 
-    private Category(int id, String description) {
+    Category(int id, String description) {
         this.id = id;
         this.description= description;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public int getId() {

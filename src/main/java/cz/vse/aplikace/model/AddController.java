@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -80,7 +79,7 @@ public class AddController {
     /**
      * Metoda, která vloží hodnoty jednotlyvých objektů transakce do JSON.json a upravuje podmínky pro jednotlivé promměné
      */
-    private void addTransactionToJSON() throws NoSuchAlgorithmException {
+    private void addTransactionToJSON() {
         if (addTransactionSum.getText().isEmpty()) {
             add_alert.setText("Sum is mandatory.");
             return;
@@ -158,11 +157,7 @@ public class AddController {
      * Metoda, která provede zápis transakce, vyvoláním metody addTransactionToJSON
      */
     public void executeAdd() {
-        try {
-            addTransactionToJSON();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+        addTransactionToJSON();
     }
 
     /**
