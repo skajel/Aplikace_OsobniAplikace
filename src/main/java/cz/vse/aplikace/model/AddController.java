@@ -173,12 +173,6 @@ public class AddController {
     }
 
     /**
-     * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
-     */
-    public void loadAdd() {
-    }
-
-    /**
      * Metoda. která přidělí transakci ID
      */
     public UUID getRandomID() {

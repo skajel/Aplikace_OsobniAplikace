@@ -20,7 +20,6 @@ import javafx.scene.layout.BorderPane;
 public class SettingsController {
     public Button settings_account;
     public Button setting_add;
-    public Button settings_transaction;
     public Button settings_overview;
     public Button changeUsername;
     public Button logOut;
@@ -41,12 +40,6 @@ public class SettingsController {
      */
     public void loadOverview() {
         Menu.loadOverview();
-    }
-
-    /**
-     *Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
-     */
-    public void loadAccount() {
     }
 
     /**

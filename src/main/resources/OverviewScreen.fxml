@@ -23,7 +23,7 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="overview_overview" mnemonicParsing="false" onAction="#loadOverview" prefHeight="40.0" prefWidth="110.0" text="OVERVIEW">
+                <Button fx:id="overview_overview" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="OVERVIEW">
                     <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                     </VBox.margin>

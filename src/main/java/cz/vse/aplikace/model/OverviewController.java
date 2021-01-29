@@ -82,11 +82,6 @@ public class OverviewController {
             return gain-spending;
         }
 
-
-    /**
-     * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
-     */
-    public void loadOverview() { }
     /**
      * Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
      */
