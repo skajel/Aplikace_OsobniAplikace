@@ -3,12 +3,9 @@ package cz.vse.aplikace.model;
 import cz.vse.aplikace.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.scene.Cursor;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -89,25 +86,21 @@ public class OverviewController {
     /**
      * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
      */
-    public void loadOverview() {
-        overview_overview.setCursor(Cursor.CLOSED_HAND);}
+    public void loadOverview() { }
     /**
      * Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
      */
     public void loadAccount(){
-        overview_account.setCursor(Cursor.HAND);
         Menu.loadAccount();}
     /**
      * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
      */
     public void loadAdd(){
-        overview_add.setCursor(Cursor.HAND);
         Menu.loadAdd(); }
     /**
      * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
      */
     public void loadTransaction(){
-        overview_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();}
 
 

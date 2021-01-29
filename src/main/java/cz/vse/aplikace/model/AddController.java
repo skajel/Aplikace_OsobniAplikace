@@ -5,7 +5,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -148,7 +147,6 @@ public class AddController {
      * Metoda, která upravuje Button - add a vyvolává metodu executeAdd
      */
     public void addTransaction() {
-        addTransactionAdd.setCursor(Cursor.HAND);
         add_alert.setText("");
         executeAdd();
     }
@@ -164,7 +162,6 @@ public class AddController {
      * Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
      */
     public void loadOverview() {
-        add_overview.setCursor(Cursor.HAND);
         Menu.loadOverview();
     }
 
@@ -172,7 +169,6 @@ public class AddController {
      * Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
      */
     public void loadAccount() {
-        add_account.setCursor(Cursor.HAND);
         Menu.loadAccount();
     }
 
@@ -180,14 +176,12 @@ public class AddController {
      * Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
      */
     public void loadAdd() {
-        add_add.setCursor(Cursor.CLOSED_HAND);
     }
 
     /**
      * Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
      */
     public void loadTransaction() {
-        add_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();
     }
 
@@ -202,7 +196,6 @@ public class AddController {
      * Metoda, která upravuje Button - Clear, vymaže vložené hodnoty v ComboBoxu a TextFieldu
      */
     public void clear() {
-        clearButton.setCursor(Cursor.HAND);
         addTransactionSum.clear();
         addTransactionDescription.clear();
         addTransactionDate.setValue(null);

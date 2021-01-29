@@ -94,7 +94,6 @@ public class RegisterController {
      */
     public void submit(MouseEvent mouseEvent) {
         register_alert.setText("");
-        sign_up.setCursor(Cursor.HAND);
         executeSubmit();
     }
     /**

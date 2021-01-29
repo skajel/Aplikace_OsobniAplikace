@@ -1,7 +1,6 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
-import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -41,7 +40,6 @@ public class SettingsController {
      *Metoda, která upravuje Button - Overview, provede změnu scény na OverviewScreen.fxml
      */
     public void loadOverview() {
-        settings_overview.setCursor(Cursor.HAND);
         Menu.loadOverview();
     }
 
@@ -49,14 +47,12 @@ public class SettingsController {
      *Metoda, která upravuje Button - Account, provede změnu scény na SettingsScreen.fxml
      */
     public void loadAccount() {
-        settings_account.setCursor(Cursor.CLOSED_HAND);
     }
 
     /**
      *Metoda, která upravuje Button - Add, provede změnu scény na AddScreen.fxml
      */
     public void loadAdd() {
-        setting_add.setCursor(Cursor.HAND);
         Menu.loadAdd();
     }
 
@@ -64,7 +60,6 @@ public class SettingsController {
      *Metoda, která upravuje Button - Transaction, provede změnu scény na TransactionScreen.fxml
      */
     public void loadTransaction() {
-        settings_transaction.setCursor(Cursor.HAND);
         Menu.loadTransaction();
     }
 
@@ -72,14 +67,12 @@ public class SettingsController {
      *Metoda, která upravuje Button - Log out, provede změnu scény na LoginScreen.fxml
      */
     public void loadLogin() {
-        logOut.setCursor(Cursor.HAND);
         Menu.loadLogin();
     }
     /**
      *Metoda, která upravuje Button - Change username, provede změnu scény na ChangeUsername.fxml
      */
     public void loadChangeUsername(){
-        changeUsername.setCursor(Cursor.HAND);
         Menu.loadChangeUsername();
     }
 
