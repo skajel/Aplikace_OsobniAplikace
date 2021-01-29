@@ -27,7 +27,6 @@ import java.util.UUID;
 public class AddController {
 
     public Button add_overview;
-    public Button add_transaction;
     public Button add_add;
     public Button add_account;
     public Button clearButton;
@@ -42,7 +41,7 @@ public class AddController {
 
     public Label add_alert;
     public double sum;
-    public static String kategorie;
+    public static String category;
 
 
     /**
@@ -104,16 +103,16 @@ public class AddController {
             return;
         }
         if ((add_gainComboBox.getSelectionModel().getSelectedItem()).toString() == "SPENDING") {
-            kategorie = (CategoryComboBox_GAIN.getSelectionModel().getSelectedItem()).toString();
+            category = (CategoryComboBox_GAIN.getSelectionModel().getSelectedItem()).toString();
         } else {
-            kategorie = (CategoryComboBox_SPENDING.getSelectionModel().getSelectedItem()).toString();
+            category = (CategoryComboBox_SPENDING.getSelectionModel().getSelectedItem()).toString();
         }
 
         Date addDate = new Date(addTransactionDate.getValue().toEpochDay());
         addTransaction((String) JSON.getCurrentUser().get(MainController.EMAIL),
                 sum = Integer.parseInt(addTransactionSum.getText()),
                 (add_gainComboBox.getSelectionModel().getSelectedItem()).toString(),
-                kategorie,
+                category,
                 addDate, addTransactionDescription.getText());
 
         Menu.loadOverview();

@@ -26,16 +26,16 @@
     -fx-text-fill: black;
 }
 
-#transaction_menu, #overview_menu, #add_menu, #settings_menu{
+#overview_menu, #add_menu, #settings_menu{
     -fx-background-color: #0A9951;
 }
 
-#transaction_menu .button, #overview_menu .button, #add_menu .button, #settings_menu .button{
+#overview_menu .button, #add_menu .button, #settings_menu .button{
     -fx-background-color: #353535;
     -fx-text-fill: white;
 }
 
-#transaction_menu .button:hover, #overview_menu .button:hover, #add_menu .button:hover, #settings_menu .button:hover{
+#overview_menu .button:hover, #add_menu .button:hover, #settings_menu .button:hover{
     -fx-background-color: black;
     -fx-text-fill: white;
     -fx-scale-x: 1.05;
