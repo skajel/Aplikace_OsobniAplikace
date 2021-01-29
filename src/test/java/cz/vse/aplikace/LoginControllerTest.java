@@ -3,6 +3,7 @@ package cz.vse.aplikace;
 import junit.framework.TestCase;
 import org.junit.Before;
 
+
 /**
  * Třída cz.vse.aplikace.LoginControllerTest je součástí testl pto aplikaci pro vedení přehledu výdajů a příjmů.
  *
