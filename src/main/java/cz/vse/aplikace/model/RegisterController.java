@@ -1,7 +1,6 @@
 package cz.vse.aplikace.model;
 
 import cz.vse.aplikace.MainController;
-import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

@@ -32,13 +32,6 @@ public enum Category {
         Arrays.stream(values()).forEach(e -> enumById.put(1, e));
     }
 
-    public static Category getById(int id) {
-        return enumById.getOrDefault(id, RENT);
-    }
-    public static Category getByDescribtion(String description) {
-        return enumById.getOrDefault(description, RENT);
-    }
-
     private int id;
     private String description;
 
